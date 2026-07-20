@@ -3,6 +3,7 @@ import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowRight, PhoneCall } from 'lucide-react';
 import logoImg from '../assets/logo icon 3.png';
+import logo8Img from '../assets/logo8.png';
 import { MagneticButton } from './MagneticButton';
 import { ThemeToggle } from './ThemeToggle';
 import { useTheme } from '../context/ThemeContext';
@@ -45,24 +46,19 @@ export const Navbar: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
-        <NavLink to="/" className="flex items-center gap-3 group relative z-50">
+        <NavLink to="/" className="flex items-center gap-2 group relative z-50">
           <img
             src={logoImg}
-            alt="KEVORCH Logo"
+            alt="KEVORCH Icon"
             className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300"
           />
-          <div className="flex flex-col">
-            <span className={`font-heading font-extrabold text-xl tracking-wider flex items-center gap-1.5 transition-colors duration-300 ${
-              isDark ? 'text-white' : 'text-neutral-900'
-            }`}>
-              NEXUS <span className={`text-xs font-mono font-normal tracking-normal uppercase px-1.5 py-0.5 rounded ${
-                isDark ? 'text-red-500 bg-red-950/40 border border-red-800/50' : 'text-slate-900 bg-stone-100 border border-stone-300'
-              }`}>HQ</span>
-            </span>
-            <span className={`text-[10px] tracking-widest uppercase font-mono -mt-1 ${
-              isDark ? 'text-red-500/80' : 'text-stone-500'
-            }`}>Digital Agency</span>
-          </div>
+          <img
+            src={logo8Img}
+            alt="KEVORCH Logo"
+            className={`h-8 object-contain transition-all duration-300 group-hover:opacity-80 ${
+              isDark ? 'brightness-100' : 'brightness-0'
+            }`}
+          />
         </NavLink>
 
         {/* Desktop Navigation */}

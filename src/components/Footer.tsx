@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { ArrowUp, Send, Check, ShieldCheck, Mail } from 'lucide-react';
 import logoImg from '../assets/logo icon 3.png';
+import logo8Img from '../assets/logo8.png';
 import { useTheme } from '../context/ThemeContext';
 
 interface IconProps { className?: string }
@@ -67,15 +68,19 @@ export const Footer: React.FC = () => {
           
           {/* Column 1: Brand & Availability */}
           <div className="lg:col-span-2 flex flex-col gap-6">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               <img
                 src={logoImg}
-                alt="KEVORCH Logo"
+                alt="KEVORCH Icon"
                 className="w-9 h-9 object-contain"
               />
-              <span className={`font-heading font-extrabold text-2xl tracking-wider ${
-                isDark ? 'text-white' : 'text-neutral-900'
-              }`}>NEXUS</span>
+              <img
+                src={logo8Img}
+                alt="KEVORCH"
+                className={`h-7 object-contain ${
+                  isDark ? 'brightness-100' : 'brightness-0'
+                }`}
+              />
             </div>
 
             <p className="text-sm max-w-sm leading-relaxed">
