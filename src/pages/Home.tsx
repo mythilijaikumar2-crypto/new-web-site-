@@ -110,7 +110,7 @@ export const Home: React.FC = () => {
                     variants={wordVariants}
                     className={`inline-block mr-2.5 ${
                       word.includes('Strategic') || word.includes('Marketing.')
-                        ? isDark ? 'text-red-500' : 'text-slate-950'
+                        ? isDark ? 'text-red-500' : 'text-red-600 font-extrabold'
                         : isDark ? 'text-white' : 'text-neutral-900'
                     }`}
                   >
