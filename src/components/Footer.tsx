@@ -30,8 +30,10 @@ export const Footer: React.FC = () => {
         ? 'bg-[#000000] border-red-900/30 text-neutral-400'
         : 'bg-stone-50 border-stone-200 text-stone-600'
     }`}>
-      {/* Background Decorative Mesh Glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-gradient-to-t from-red-950/20 via-red-900/10 to-transparent blur-3xl pointer-events-none" />
+      {/* Background Decorative Mesh Glow in Dark Mode Only */}
+      {isDark && (
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-gradient-to-t from-red-950/20 via-red-900/10 to-transparent blur-3xl pointer-events-none" />
+      )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-red-900/20">

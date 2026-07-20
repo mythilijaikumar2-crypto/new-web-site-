@@ -149,7 +149,9 @@ export const Services: React.FC = () => {
             </p>
             <button
               onClick={() => navigate('/contact')}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-red-600 text-white font-semibold text-sm hover:bg-red-700 transition-colors cursor-pointer"
+              className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-colors cursor-pointer ${
+                isDark ? 'bg-red-600 text-white hover:bg-red-700' : 'bg-slate-950 text-white hover:bg-red-600'
+              }`}
             >
               Contact Our Team <ArrowRight className="w-4 h-4" />
             </button>

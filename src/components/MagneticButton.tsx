@@ -44,16 +44,18 @@ export const MagneticButton: React.FC<MagneticButtonProps> = ({
   };
 
   const variantStyles = {
-    primary: 'bg-gradient-to-r from-red-600 via-red-700 to-rose-900 text-white shadow-lg shadow-red-600/30 hover:shadow-red-600/60 hover:from-red-500 hover:to-red-700 border border-red-500/30',
+    primary: isDark
+      ? 'bg-gradient-to-r from-red-600 via-red-700 to-rose-900 text-white shadow-lg shadow-red-600/30 hover:shadow-red-600/60 hover:from-red-500 hover:to-red-700 border border-red-500/30'
+      : 'bg-slate-950 text-white hover:bg-red-600 shadow-sm border border-slate-900',
     secondary: isDark
       ? 'bg-neutral-900 text-white border border-red-900/50 hover:border-red-500/80 hover:bg-neutral-800 backdrop-blur-md'
-      : 'bg-stone-100 text-neutral-900 border border-stone-300 hover:border-red-500/50 hover:bg-stone-200 shadow-sm',
+      : 'bg-stone-100 text-neutral-900 border border-stone-300 hover:border-red-500 hover:text-red-600 hover:bg-stone-200 shadow-sm',
     outline: isDark
       ? 'border border-red-500/50 text-red-400 hover:bg-red-600/10 hover:border-red-400 hover:text-white'
-      : 'border border-red-600 text-red-600 hover:bg-red-50 hover:text-red-700',
+      : 'border border-red-600 text-red-600 hover:bg-red-600 hover:text-white',
     ghost: isDark
       ? 'text-neutral-300 hover:text-white hover:bg-white/5'
-      : 'text-stone-700 hover:text-stone-900 hover:bg-black/5',
+      : 'text-stone-700 hover:text-red-600 hover:bg-stone-100',
   };
 
   return (
@@ -66,8 +68,10 @@ export const MagneticButton: React.FC<MagneticButtonProps> = ({
       onClick={onClick}
       className={`${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`}
     >
-      {/* Glow Effect */}
-      <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-red-500/30 to-rose-600/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md pointer-events-none" />
+      {/* Glow Effect in Dark Mode Only */}
+      {isDark && (
+        <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-red-500/30 to-rose-600/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md pointer-events-none" />
+      )}
       <span className="relative z-10 flex items-center gap-2 font-semibold">{children}</span>
     </motion.button>
   );
