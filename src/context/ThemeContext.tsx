@@ -11,13 +11,7 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setThemeState] = useState<Theme>(() => {
-    if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('nexus_theme') as Theme | null;
-      if (stored === 'dark' || stored === 'light') return stored;
-    }
-    return 'dark'; // Always default to Dark Mode on website open
-  });
+  const [theme, setThemeState] = useState<Theme>('dark');
 
   const setTheme = (newTheme: Theme) => {
     setThemeState(newTheme);
