@@ -351,58 +351,127 @@ export const Home: React.FC = () => {
       {/* ========================================================================= */}
       {/* 3. WHY CHOOSE US / AGENCY OVERVIEW */}
       {/* ========================================================================= */}
-      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          <div className="lg:col-span-6 relative">
-            <div className="relative rounded-3xl overflow-hidden border border-neutral-800 group">
-              <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80"
-                alt="NEXUS Digital Team"
-                className="w-full h-100 object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className={`absolute inset-0 bg-linear-to-t via-transparent to-transparent ${
-                isDark ? 'from-black' : 'from-white'
-              }`} />
-            </div>
-          </div>
+      <section className={`py-24 transition-colors ${isDark ? 'bg-neutral-950' : 'bg-stone-50'}`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          <div className="lg:col-span-6 space-y-6">
-            <span className={`text-xs font-mono uppercase tracking-widest font-semibold ${
-              isDark ? 'text-red-500' : 'text-stone-700'
-            }`}>
-              // Why Choose NEXUS
+          {/* Section header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="text-center mb-16"
+          >
+            <span className={`text-xs font-mono uppercase tracking-widest font-semibold ${isDark ? 'text-red-500' : 'text-stone-600'}`}>
+              // Why Choose Us
             </span>
-            <h2 className={`text-3xl sm:text-4xl font-heading font-bold leading-tight ${
-              isDark ? 'text-white' : 'text-neutral-900'
-            }`}>
-              Dedicated marketing leads & modern frontend developers.
+            <h2 className={`mt-3 text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold leading-tight ${isDark ? 'text-white' : 'text-neutral-900'}`}>
+              Built for <span className="text-red-500">results,</span> not excuses.
             </h2>
-            <p className={`text-base leading-relaxed ${isDark ? 'text-neutral-400' : 'text-stone-600'}`}>
-              We partner directly with business leads and marketing directors to build modern React applications, optimize local search rankings, and manage profitable ad spend.
+            <p className={`mt-4 text-base max-w-xl mx-auto leading-relaxed ${isDark ? 'text-neutral-400' : 'text-stone-500'}`}>
+              We work directly with founders and marketing leads — no layers, no delays, just measurable growth.
             </p>
+          </motion.div>
 
-            <div className="grid grid-cols-2 gap-4 pt-2">
-              <div className={`p-4 rounded-2xl border ${
-                isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-stone-50 border-stone-200'
-              }`}>
-                <span className={`text-2xl font-bold font-number ${isDark ? 'text-red-500' : 'text-slate-950'}`}>98%</span>
-                <p className={`text-xs mt-1 ${isDark ? 'text-neutral-400' : 'text-stone-500'}`}>Client Satisfaction</p>
-              </div>
-              <div className={`p-4 rounded-2xl border ${
-                isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-stone-50 border-stone-200'
-              }`}>
-                <span className={`text-2xl font-bold font-number ${isDark ? 'text-red-500' : 'text-slate-950'}`}>100+</span>
-                <p className={`text-xs mt-1 ${isDark ? 'text-neutral-400' : 'text-stone-500'}`}>Successful Campaigns</p>
-              </div>
-            </div>
+          {/* Feature cards grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              {
+                icon: '🎯',
+                title: 'Direct Partnership',
+                desc: 'You work with experienced leads — not interns or account managers passing messages.',
+                delay: 0.1,
+              },
+              {
+                icon: '📈',
+                title: 'ROI-First Mindset',
+                desc: 'Every campaign is measured by revenue impact. We optimize for ROAS, not vanity metrics.',
+                delay: 0.2,
+              },
+              {
+                icon: '⚡',
+                title: 'Fast Execution',
+                desc: 'Campaigns live in 24–48 hrs. SEO momentum builds in weeks, not quarters.',
+                delay: 0.3,
+              },
+              {
+                icon: '🔍',
+                title: 'Technical SEO',
+                desc: 'We audit, fix, and build authority that puts your brand on Page 1 and keeps it there.',
+                delay: 0.4,
+              },
+              {
+                icon: '💻',
+                title: 'Modern Web Dev',
+                desc: 'React-powered sites that are blazing fast, fully responsive, and built to convert.',
+                delay: 0.5,
+              },
+              {
+                icon: '📊',
+                title: 'Transparent Reporting',
+                desc: 'Real-time dashboards and weekly updates. You always know where your budget goes.',
+                delay: 0.6,
+              },
+            ].map(({ icon, title, desc, delay }) => (
+              <motion.div
+                key={title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -4, scale: 1.01 }}
+                className={`group relative rounded-2xl p-6 border cursor-default transition-all duration-300 ${
+                  isDark
+                    ? 'bg-neutral-900/60 border-neutral-800 hover:border-red-800/60 hover:bg-neutral-900'
+                    : 'bg-white border-stone-200 hover:border-red-200 hover:shadow-lg shadow-sm'
+                }`}
+              >
+                {/* Subtle glow on hover */}
+                {isDark && (
+                  <div className="absolute inset-0 rounded-2xl bg-red-600/0 group-hover:bg-red-600/5 transition-colors duration-300 pointer-events-none" />
+                )}
 
-            <NavLink to="/about" className={`inline-flex items-center gap-2 text-sm font-heading font-semibold pt-2 group ${
-              isDark ? 'text-red-500 hover:text-red-400' : 'text-slate-900 hover:text-black'
-            }`}>
-              Learn More About Our Team <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </NavLink>
+                <div className="text-3xl mb-4">{icon}</div>
+                <h3 className={`text-base font-heading font-bold mb-2 ${isDark ? 'text-white' : 'text-neutral-900'}`}>
+                  {title}
+                </h3>
+                <p className={`text-sm leading-relaxed ${isDark ? 'text-neutral-400' : 'text-stone-500'}`}>
+                  {desc}
+                </p>
+
+                {/* Bottom accent line */}
+                <div className="mt-5 h-0.5 w-8 rounded-full bg-red-500/0 group-hover:bg-red-500 group-hover:w-16 transition-all duration-500" />
+              </motion.div>
+            ))}
           </div>
+
+          {/* Bottom CTA row */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="mt-14 flex flex-col sm:flex-row items-center justify-between gap-6 border rounded-2xl px-8 py-6 transition-colors"
+            style={{
+              borderColor: isDark ? 'rgba(63,63,70,0.6)' : 'rgb(228,228,231)',
+              background: isDark ? 'rgba(10,10,10,0.8)' : 'rgba(255,255,255,0.9)',
+            }}
+          >
+            <div>
+              <p className={`text-sm font-mono font-semibold uppercase tracking-wider ${isDark ? 'text-red-500' : 'text-stone-600'}`}>Client Satisfaction</p>
+              <div className="flex items-end gap-4 mt-1">
+                <span className={`text-4xl font-extrabold font-heading ${isDark ? 'text-white' : 'text-neutral-900'}`}>98%</span>
+                <span className={`text-4xl font-extrabold font-heading ${isDark ? 'text-red-500' : 'text-red-600'}`}>100+</span>
+              </div>
+              <p className={`text-xs mt-1 ${isDark ? 'text-neutral-500' : 'text-stone-500'}`}>satisfaction · successful campaigns</p>
+            </div>
+            <NavLink
+              to="/about"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-heading font-semibold text-sm bg-red-600 hover:bg-red-500 text-white transition-colors duration-200 group shrink-0"
+            >
+              Meet Our Team <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </NavLink>
+          </motion.div>
 
         </div>
       </section>
