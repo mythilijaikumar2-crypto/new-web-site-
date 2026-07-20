@@ -21,8 +21,8 @@ export const About: React.FC = () => {
     <div className={`relative min-h-screen pt-32 pb-24 transition-colors duration-400 ${
       isDark ? 'bg-black text-white' : 'bg-white text-neutral-900'
     }`}>
-      {/* Background Red Glows */}
-      <div className="absolute top-20 right-10 w-96 h-96 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Background Red Glows in Dark Mode Only */}
+      {isDark && <div className="absolute top-20 right-10 w-96 h-96 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />}
 
       {/* ========================================================================= */}
       {/* 1. ABOUT HERO */}

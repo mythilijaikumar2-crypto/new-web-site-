@@ -28,8 +28,8 @@ export const Services: React.FC = () => {
   const isDark = theme === 'dark';
 
   const getServiceIcon = (iconName: string) => {
-    const iconClass = `w-8 h-8 mx-auto mb-4 stroke-[1.5] ${
-      isDark ? 'text-red-500' : 'text-slate-800'
+    const iconClass = `w-8 h-8 mx-auto mb-4 stroke-[1.5] transition-colors ${
+      isDark ? 'text-red-500' : 'text-slate-800 group-hover:text-red-500'
     }`;
 
     switch (iconName) {
@@ -103,19 +103,21 @@ export const Services: React.FC = () => {
               variants={cardVariants}
               initial="hidden"
               animate="visible"
-              className={`rounded-[16px] p-6 text-center flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 cursor-pointer ${
+              className={`rounded-[16px] p-6 text-center flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 cursor-pointer group ${
                 isDark
-                  ? 'bg-[#111827] border border-slate-800 shadow-sm hover:shadow-md hover:border-slate-700'
-                  : 'bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-slate-300'
+                  ? 'bg-[#111827] border border-slate-800 shadow-sm hover:shadow-md hover:border-red-500/70'
+                  : 'bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-red-500/70'
               }`}
               onClick={() => navigate('/contact')}
             >
               <div>
                 {/* Outline Icon Top Center */}
-                {getServiceIcon(service.iconName)}
+                <div className="group-hover:text-red-500 transition-colors">
+                  {getServiceIcon(service.iconName)}
+                </div>
 
                 {/* Service Title */}
-                <h3 className={`text-base font-bold mb-2.5 leading-snug ${
+                <h3 className={`text-base font-bold mb-2.5 leading-snug group-hover:text-red-500 transition-colors ${
                   isDark ? 'text-white' : 'text-slate-900'
                 }`}>
                   {service.title}

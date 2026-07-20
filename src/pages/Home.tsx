@@ -74,8 +74,10 @@ export const Home: React.FC = () => {
       {/* 1. HERO SECTION */}
       {/* ========================================================================= */}
       <section className="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden">
-        {/* Soft Crimson Glow */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-hero-glow blur-3xl pointer-events-none opacity-60" />
+        {/* Soft Crimson Glow in Dark Mode Only */}
+        {isDark && (
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-hero-glow blur-3xl pointer-events-none opacity-60" />
+        )}
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
