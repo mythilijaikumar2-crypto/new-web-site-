@@ -118,38 +118,34 @@ export const Clients: React.FC = () => {
             <div
               key={study.id}
               onClick={() => setSelectedProject(study)}
-              className={`glass-card rounded-3xl overflow-hidden border transition-all duration-300 group cursor-pointer flex flex-col justify-between ${
-                isDark ? 'border-red-900/30 hover:border-red-500/50' : 'border-stone-200 hover:border-red-400 shadow-sm'
+              className={`rounded-3xl p-7 border transition-all duration-300 group cursor-pointer flex flex-col justify-between space-y-6 ${
+                isDark ? 'bg-neutral-950 border-red-900/30 hover:border-red-500/50' : 'bg-white border-stone-200 hover:border-red-400 shadow-sm'
               }`}
             >
-              <div className="relative h-56 overflow-hidden">
-                <img
-                  src={study.imageUrl}
-                  alt={study.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className={`absolute inset-0 bg-gradient-to-t via-transparent to-transparent ${
-                  isDark ? 'from-black' : 'from-white'
-                }`} />
-                
-                <span className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-mono border ${
-                  isDark ? 'bg-black/90 border-red-900/40 text-red-400' : 'bg-white/90 border-stone-200 text-red-600 shadow-xs'
-                }`}>
-                  {study.client}
-                </span>
-              </div>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <span className={`px-3 py-1 rounded-full text-xs font-mono font-bold border ${
+                    isDark ? 'bg-black border-red-900/40 text-red-400' : 'bg-stone-100 border-stone-200 text-red-600'
+                  }`}>
+                    {study.client}
+                  </span>
+                  <span className={`text-[10px] font-mono ${isDark ? 'text-neutral-400' : 'text-stone-500'}`}>
+                    {study.industry}
+                  </span>
+                </div>
 
-              <div className="p-6 space-y-4">
                 <h3 className={`text-xl font-heading font-bold group-hover:text-red-500 transition-colors ${
                   isDark ? 'text-white' : 'text-neutral-900'
                 }`}>
                   {study.title}
                 </h3>
-                <p className={`text-xs line-clamp-2 leading-relaxed ${isDark ? 'text-neutral-400' : 'text-stone-600'}`}>
+                <p className={`text-xs line-clamp-3 leading-relaxed ${isDark ? 'text-neutral-400' : 'text-stone-600'}`}>
                   {study.summary}
                 </p>
+              </div>
 
-                <div className="grid grid-cols-2 gap-2 pt-2 text-xs">
+              <div className="space-y-4">
+                <div className="grid grid-cols-2 gap-2 text-xs">
                   <div className={`p-2.5 rounded-xl border ${isDark ? 'bg-black border-neutral-900' : 'bg-stone-50 border-stone-200'}`}>
                     <span className="text-red-500 block font-mono text-[10px]">ROI Multiplier</span>
                     <span className="font-bold font-number text-red-500">{study.results.roi}</span>
@@ -160,7 +156,9 @@ export const Clients: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="pt-2 flex items-center justify-between text-xs text-red-500 font-semibold">
+                <div className={`pt-3 border-t flex items-center justify-between text-xs text-red-500 font-semibold ${
+                  isDark ? 'border-neutral-900' : 'border-stone-200'
+                }`}>
                   <span>Read Full Case Study</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
