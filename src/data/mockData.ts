@@ -80,16 +80,7 @@ export const SERVICES_DATA: Service[] = [
     metrics: { avgGrowth: '+340%', timeline: '1-2 Weeks', roas: '4.5x ROAS' },
     featured: true,
   },
-  {
-    id: 'youtube-ads',
-    title: 'YouTube Video Advertising',
-    category: 'Paid Media',
-    shortDescription: 'Engage audiences with compelling video story ads and targeted in-stream placements.',
-    fullDescription: 'Short video ads built to capture attention, communicate value quickly, and drive measurable user actions.',
-    iconName: 'Video',
-    features: ['Video Script Writing', 'Placement Selection', 'Audience Segmentation', 'Action Campaign Tracking'],
-    metrics: { avgGrowth: '+260%', timeline: '2-3 Weeks', roas: '3.9x ROAS' },
-  },
+
   {
     id: 'smm',
     title: 'Social Media Management',
