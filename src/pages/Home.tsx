@@ -14,7 +14,7 @@ import {
   Play,
   Flame,
 } from 'lucide-react';
-import { AreaChart, Area, ResponsiveContainer, XAxis, YAxis, Tooltip } from 'recharts';
+
 import { MagneticButton } from '../components/MagneticButton';
 import { TiltCard } from '../components/TiltCard';
 import { Marquee } from '../components/Marquee';
@@ -25,14 +25,7 @@ import { useTheme } from '../context/ThemeContext';
 import bgLightVideo from '../assets/bglight1.mp4';
 import bgDarkVideo from '../assets/bgdark1.mp4';
 
-const HERO_GRAPH_DATA = [
-  { month: 'Jan', revenue: 28000, roas: 3.4 },
-  { month: 'Feb', revenue: 42000, roas: 3.9 },
-  { month: 'Mar', revenue: 58000, roas: 4.2 },
-  { month: 'Apr', revenue: 84000, roas: 5.1 },
-  { month: 'May', revenue: 112000, roas: 5.6 },
-  { month: 'Jun', revenue: 156000, roas: 6.4 },
-];
+
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -192,82 +185,148 @@ export const Home: React.FC = () => {
               </motion.div>
             </div>
 
-            {/* Right Visual Analytics Card */}
+            {/* Right Visual - Premium Animated Results Card */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-5 relative"
             >
-              <TiltCard glowColor={isDark ? "rgba(222, 9, 24, 0.25)" : "rgba(0, 0, 0, 0.05)"}>
-                <div className={`rounded-3xl p-6 border shadow-xl space-y-5 transition-colors ${
-                  isDark ? 'bg-neutral-950/90 border-neutral-800' : 'bg-white border-stone-200'
-                }`}>
-                  
-                  <div className={`flex items-center justify-between border-b pb-4 ${isDark ? 'border-neutral-800/60' : 'border-stone-200'}`}>
-                    <div className="flex items-center gap-2">
-                      <div className={`w-2.5 h-2.5 rounded-full ${isDark ? 'bg-red-500' : 'bg-slate-900'}`}></div>
-                      <span className={`text-xs font-mono font-medium ${isDark ? 'text-neutral-300' : 'text-stone-700'}`}>
-                        Analytics Overview
+              {/* Ambient glow */}
+              {isDark && (
+                <div className="absolute -inset-6 rounded-[3rem] bg-red-600/10 blur-3xl pointer-events-none" />
+              )}
+
+              <TiltCard glowColor={isDark ? "rgba(222,9,24,0.3)" : "rgba(0,0,0,0.06)"}>
+                <div className={`relative rounded-3xl overflow-hidden border transition-colors ${
+                  isDark ? 'bg-neutral-950/95 border-neutral-800' : 'bg-white border-stone-200'
+                } shadow-2xl`}>
+
+                  {/* Top header bar */}
+                  <div className={`flex items-center justify-between px-6 py-4 border-b ${
+                    isDark ? 'border-neutral-800/70' : 'border-stone-100'
+                  }`}>
+                    <div className="flex items-center gap-2.5">
+                      <motion.div
+                        animate={{ scale: [1, 1.25, 1] }}
+                        transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                        className="w-2.5 h-2.5 rounded-full bg-red-500 shadow-[0_0_8px_#DE0918]"
+                      />
+                      <span className={`text-xs font-mono font-semibold tracking-wider uppercase ${isDark ? 'text-neutral-300' : 'text-stone-700'}`}>
+                        Live Results
                       </span>
                     </div>
-                    <span className={`text-[11px] font-mono font-semibold ${isDark ? 'text-red-500' : 'text-slate-700'}`}>
-                      Live Performance
-                    </span>
+                    <motion.span
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 1.2 }}
+                      className="text-[11px] font-mono font-bold text-red-500"
+                    >
+                      ● ACTIVE
+                    </motion.span>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className={`p-3.5 rounded-2xl border ${
-                      isDark ? 'bg-neutral-900/60 border-neutral-800' : 'bg-stone-50 border-stone-200'
-                    }`}>
-                      <span className={`text-[11px] font-mono ${isDark ? 'text-neutral-400' : 'text-stone-500'}`}>Campaign ROAS</span>
-                      <div className={`text-2xl font-bold font-number mt-1 ${isDark ? 'text-red-500' : 'text-slate-950'}`}>4.8x</div>
+                  {/* Main content */}
+                  <div className="p-6 space-y-5">
+
+                    {/* Top big stat */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 12 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.6, duration: 0.6 }}
+                      className={`rounded-2xl p-5 border relative overflow-hidden ${
+                        isDark ? 'bg-neutral-900/70 border-neutral-800' : 'bg-stone-50 border-stone-200'
+                      }`}
+                    >
+                      {isDark && (
+                        <div className="absolute right-0 top-0 w-24 h-24 bg-red-600/10 blur-2xl rounded-full pointer-events-none" />
+                      )}
+                      <p className={`text-[11px] font-mono uppercase tracking-widest mb-1 ${isDark ? 'text-neutral-500' : 'text-stone-500'}`}>
+                        Avg. Monthly Revenue Tracked
+                      </p>
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.85 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.8, type: 'spring', stiffness: 200 }}
+                        className={`text-4xl font-extrabold font-heading ${isDark ? 'text-white' : 'text-neutral-900'}`}
+                      >
+                        $156K
+                        <span className="text-red-500">/mo</span>
+                      </motion.div>
+                      {/* Animated progress bar */}
+                      <div className={`mt-3 h-1.5 rounded-full overflow-hidden ${isDark ? 'bg-neutral-800' : 'bg-stone-200'}`}>
+                        <motion.div
+                          initial={{ width: 0 }}
+                          animate={{ width: '82%' }}
+                          transition={{ delay: 1, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                          className="h-full rounded-full bg-linear-to-r from-red-600 to-rose-400"
+                        />
+                      </div>
+                      <p className={`text-[10px] font-mono mt-1.5 ${isDark ? 'text-neutral-500' : 'text-stone-400'}`}>↑ 82% toward quarterly goal</p>
+                    </motion.div>
+
+                    {/* 3-column stat grid */}
+                    <div className="grid grid-cols-3 gap-3">
+                      {[
+                        { label: 'ROAS', value: '4.8x', icon: '📈', delay: 0.75 },
+                        { label: 'Organic', value: '+280%', icon: '🚀', delay: 0.9 },
+                        { label: 'CTR Lift', value: '3.2x', icon: '⚡', delay: 1.05 },
+                      ].map(({ label, value, icon, delay }) => (
+                        <motion.div
+                          key={label}
+                          initial={{ opacity: 0, y: 14 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                          whileHover={{ scale: 1.04 }}
+                          className={`rounded-2xl p-3 border text-center cursor-default transition-colors ${
+                            isDark
+                              ? 'bg-neutral-900/60 border-neutral-800 hover:border-red-800/50'
+                              : 'bg-stone-50 border-stone-200 hover:border-red-200'
+                          }`}
+                        >
+                          <div className="text-lg mb-0.5">{icon}</div>
+                          <div className={`text-lg font-extrabold font-heading ${isDark ? 'text-red-400' : 'text-slate-900'}`}>{value}</div>
+                          <div className={`text-[10px] font-mono ${isDark ? 'text-neutral-500' : 'text-stone-500'}`}>{label}</div>
+                        </motion.div>
+                      ))}
                     </div>
 
-                    <div className={`p-3.5 rounded-2xl border ${
-                      isDark ? 'bg-neutral-900/60 border-neutral-800' : 'bg-stone-50 border-stone-200'
-                    }`}>
-                      <span className={`text-[11px] font-mono ${isDark ? 'text-neutral-400' : 'text-stone-500'}`}>Organic Growth</span>
-                      <div className={`text-2xl font-bold font-number mt-1 ${isDark ? 'text-red-500' : 'text-slate-950'}`}>+280%</div>
-                    </div>
+                    {/* Activity feed */}
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 1.1, duration: 0.6 }}
+                      className={`rounded-2xl p-4 border space-y-3 ${
+                        isDark ? 'bg-neutral-900/60 border-neutral-800' : 'bg-stone-50 border-stone-200'
+                      }`}
+                    >
+                      <p className={`text-[10px] font-mono uppercase tracking-widest font-semibold ${isDark ? 'text-neutral-500' : 'text-stone-500'}`}>
+                        Recent Wins
+                      </p>
+                      {[
+                        { text: 'SEO campaign hit Page 1 ranking', time: '2h ago', color: 'bg-green-500' },
+                        { text: 'ROAS exceeded target by 34%', time: '5h ago', color: 'bg-red-500' },
+                        { text: 'New client onboarded — ₹8L budget', time: '1d ago', color: 'bg-blue-500' },
+                      ].map(({ text, time, color }, i) => (
+                        <motion.div
+                          key={text}
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 1.2 + i * 0.15, duration: 0.4 }}
+                          className="flex items-start gap-2.5"
+                        >
+                          <span className={`w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 ${color}`} />
+                          <p className={`text-[11px] flex-1 font-medium ${isDark ? 'text-neutral-300' : 'text-stone-700'}`}>{text}</p>
+                          <span className={`text-[10px] font-mono shrink-0 ${isDark ? 'text-neutral-600' : 'text-stone-400'}`}>{time}</span>
+                        </motion.div>
+                      ))}
+                    </motion.div>
+
                   </div>
-
-                  <div className={`rounded-2xl p-4 border space-y-2 ${
-                    isDark ? 'bg-neutral-900/60 border-neutral-800' : 'bg-stone-50 border-stone-200'
-                  }`}>
-                    <div className="flex items-center justify-between text-xs">
-                      <span className={`font-medium ${isDark ? 'text-neutral-300' : 'text-stone-700'}`}>Tracked Revenue Growth</span>
-                      <span className={`font-mono font-bold ${isDark ? 'text-red-500' : 'text-slate-950'}`}>$156,000 / mo</span>
-                    </div>
-                    <div className="h-36 w-full">
-                      <ResponsiveContainer width="100%" height="100%">
-                        <AreaChart data={HERO_GRAPH_DATA}>
-                          <defs>
-                            <linearGradient id="colorRevRedInf" x1="0" y1="0" x2="0" y2="1">
-                              <stop offset="5%" stopColor={isDark ? "#DE0918" : "#0F172A"} stopOpacity={0.5} />
-                              <stop offset="95%" stopColor={isDark ? "#DE0918" : "#0F172A"} stopOpacity={0.0} />
-                            </linearGradient>
-                          </defs>
-                          <XAxis dataKey="month" stroke={isDark ? "#525252" : "#A3A3A3"} fontSize={10} tickLine={false} />
-                          <YAxis hide />
-                          <Tooltip
-                            contentStyle={{
-                              backgroundColor: isDark ? '#171717' : '#FFFFFF',
-                              borderColor: isDark ? '#DE0918' : '#0F172A',
-                              borderRadius: '10px',
-                              fontSize: '11px',
-                              color: isDark ? '#FFF' : '#000'
-                            }}
-                          />
-                          <Area type="monotone" dataKey="revenue" stroke={isDark ? "#DE0918" : "#0F172A"} strokeWidth={2} fillOpacity={1} fill="url(#colorRevRedInf)" />
-                        </AreaChart>
-                      </ResponsiveContainer>
-                    </div>
-                  </div>
-
                 </div>
               </TiltCard>
             </motion.div>
+
 
           </div>
         </div>
