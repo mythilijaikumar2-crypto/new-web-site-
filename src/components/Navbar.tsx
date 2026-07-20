@@ -44,7 +44,7 @@ export const Navbar: React.FC = () => {
           : 'bg-transparent py-4'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-0 flex items-center justify-between">
 
         {/* ── LEFT: Brand Logo ── */}
         <NavLink to="/" className="flex items-center group relative z-50 shrink-0">
@@ -52,13 +52,13 @@ export const Navbar: React.FC = () => {
           <img
             src={logoImg}
             alt="KEVORCH Icon"
-            className="w-12 h-12 object-contain flex-shrink-0"
+            className="w-16 h-16 object-contain flex-shrink-0"
           />
           {/* Wordmark - already transparent background */}
           <img
             src={logo8Img}
             alt="KEVORCH"
-            className={`h-9 w-auto object-contain transition-opacity duration-300 group-hover:opacity-75 ${
+            className={`h-11 w-auto object-contain transition-opacity duration-300 group-hover:opacity-75 ${
               isDark ? '' : 'brightness-0'
             }`}
           />
