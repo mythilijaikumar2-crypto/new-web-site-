@@ -15,13 +15,8 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     if (typeof window !== 'undefined') {
       const stored = localStorage.getItem('nexus_theme') as Theme | null;
       if (stored === 'dark' || stored === 'light') return stored;
-
-      // Check system preference
-      if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-        return 'light';
-      }
     }
-    return 'dark'; // Default Dark Mode
+    return 'dark'; // Always default to Dark Mode on website open
   });
 
   const setTheme = (newTheme: Theme) => {
