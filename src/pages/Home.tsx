@@ -711,9 +711,9 @@ export const Home: React.FC = () => {
           <div className={`rounded-3xl p-8 sm:p-12 border relative space-y-8 ${
             isDark ? 'bg-black border-neutral-800' : 'bg-white border-stone-200 shadow-sm'
           }`}>
-            <div className={`flex justify-center items-center gap-1 ${isDark ? 'text-red-500' : 'text-amber-500'}`}>
+            <div className="flex justify-center items-center gap-1 text-amber-400">
               {[...Array(TESTIMONIALS[activeTestimonial].rating)].map((_, i) => (
-                <Star key={i} className={`w-5 h-5 ${isDark ? 'fill-red-500' : 'fill-amber-500'}`} />
+                <Star key={i} className="w-5 h-5 fill-amber-400" />
               ))}
             </div>
 
