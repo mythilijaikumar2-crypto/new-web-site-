@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowRight, PhoneCall } from 'lucide-react';
-import logoImg from '../assets/logo icon 3.png';
-import logo8Img from '../assets/logo8.png';
+import logoImg from '../assets/logo_icon_3-removebg-preview.png';
+import logo8Img from '../assets/logo8-removebg-preview.png';
 import { MagneticButton } from './MagneticButton';
 import { ThemeToggle } from './ThemeToggle';
 import { useTheme } from '../context/ThemeContext';
@@ -47,22 +47,20 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
 
         {/* ── LEFT: Brand Logo ── */}
-        <NavLink to="/" className="flex items-center gap-0 group relative z-50 shrink-0">
-          {/* Icon — transparent bg, no container */}
+        <NavLink to="/" className="flex items-center group relative z-50 shrink-0">
+          {/* Icon - removebg, transparent, no container */}
           <img
             src={logoImg}
             alt="KEVORCH Icon"
-            className="w-11 h-11 object-contain mix-blend-normal"
-            style={{ background: 'transparent' }}
+            className="w-12 h-12 object-contain flex-shrink-0"
           />
-          {/* Wordmark logo — dark mode: white, light mode: dark */}
+          {/* Wordmark - already transparent background */}
           <img
             src={logo8Img}
             alt="KEVORCH"
-            className={`h-7 object-contain transition-all duration-300 ${
-              isDark ? 'brightness-100 invert-0' : 'brightness-0'
+            className={`h-9 w-auto object-contain transition-opacity duration-300 group-hover:opacity-75 ${
+              isDark ? '' : 'brightness-0'
             }`}
-            style={{ background: 'transparent' }}
           />
         </NavLink>
 
