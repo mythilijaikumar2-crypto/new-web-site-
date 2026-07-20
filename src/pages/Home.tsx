@@ -48,7 +48,7 @@ export const Home: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const headlineWords = "Transform Your Brand With Strategic Performance Marketing.".split(" ");
+  const headlineWords = "Make Your Mark. Transform Your Brand With Strategic Performance Marketing.".split(" ");
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -110,7 +110,7 @@ export const Home: React.FC = () => {
                 }`}
               >
                 <Flame className={`w-3.5 h-3.5 ${isDark ? 'text-red-500' : 'text-slate-800'}`} />
-                <span>Full-Service Digital Marketing Agency</span>
+                <span>Make Your Mark // Growth Agency</span>
               </motion.div>
 
               {/* Large Statement Heading */}
@@ -125,8 +125,8 @@ export const Home: React.FC = () => {
                     key={index}
                     variants={wordVariants}
                     className={`inline-block mr-2.5 ${
-                      word.includes('Strategic') || word.includes('Marketing.')
-                        ? isDark ? 'text-red-500' : 'text-red-600 font-extrabold'
+                      word.includes('Make') || word.includes('Mark.') || word.includes('Strategic') || word.includes('Marketing.')
+                        ? isDark ? 'text-red-500 font-black' : 'text-red-600 font-black'
                         : isDark ? 'text-white' : 'text-neutral-900'
                     }`}
                   >

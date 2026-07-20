@@ -54,6 +54,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <p className="text-sm max-w-sm leading-relaxed">
+              <strong className={`block mb-1 text-base font-extrabold ${isDark ? 'text-white' : 'text-slate-950'}`}>Make Your Mark.</strong>
               Award-winning growth agency crafting hyper-converting digital experiences, algorithmic PPC campaigns, and high-DA search engine dominance.
             </p>
 
