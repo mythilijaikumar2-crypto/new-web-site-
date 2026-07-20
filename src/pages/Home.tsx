@@ -110,7 +110,7 @@ export const Home: React.FC = () => {
                 }`}
               >
                 <Flame className={`w-3.5 h-3.5 ${isDark ? 'text-red-500' : 'text-slate-800'}`} />
-                <span>Make Your Mark // Growth Agency</span>
+                <span>Make Your Mark.</span>
               </motion.div>
 
               {/* Large Statement Heading */}
