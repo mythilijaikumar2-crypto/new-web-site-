@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
     }`}>
       {/* Background Decorative Mesh Glow in Dark Mode Only */}
       {isDark && (
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-gradient-to-t from-red-950/20 via-red-900/10 to-transparent blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-200 h-75 bg-linear-to-t from-red-950/20 via-red-900/10 to-transparent blur-3xl pointer-events-none" />
       )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -41,7 +41,7 @@ export const Footer: React.FC = () => {
           {/* Column 1: Brand & Availability */}
           <div className="lg:col-span-2 flex flex-col gap-6">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-red-600 to-rose-400 p-[1.5px]">
+              <div className="w-9 h-9 rounded-xl bg-linear-to-tr from-red-600 to-rose-400 p-[1.5px]">
                 <div className={`w-full h-full rounded-[10.5px] flex items-center justify-center ${
                   isDark ? 'bg-black' : 'bg-white'
                 }`}>

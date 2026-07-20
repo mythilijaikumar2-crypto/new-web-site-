@@ -103,7 +103,7 @@ export const Services: React.FC = () => {
               variants={cardVariants}
               initial="hidden"
               animate="visible"
-              className={`rounded-[16px] p-6 text-center flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 cursor-pointer group ${
+              className={`rounded-2xl p-6 text-center flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 cursor-pointer group ${
                 isDark
                   ? 'bg-[#111827] border border-slate-800 shadow-sm hover:shadow-md hover:border-red-500/70'
                   : 'bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-red-500/70'
@@ -136,7 +136,7 @@ export const Services: React.FC = () => {
 
         {/* Corporate CTA Banner */}
         <div className="mt-20 text-center">
-          <div className={`rounded-[16px] p-8 sm:p-12 text-center max-w-4xl mx-auto border transition-colors ${
+          <div className={`rounded-2xl p-8 sm:p-12 text-center max-w-4xl mx-auto border transition-colors ${
             isDark ? 'bg-[#111827] border-slate-800' : 'bg-white border-slate-200 shadow-sm'
           }`}>
             <h2 className={`text-2xl sm:text-3xl font-bold mb-3 ${

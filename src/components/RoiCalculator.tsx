@@ -20,7 +20,7 @@ export const RoiCalculator: React.FC = () => {
       isDark ? 'border-red-900/40' : 'border-stone-200'
     }`}>
       {/* Glow highlight */}
-      <div className="absolute top-0 right-0 w-72 h-72 bg-gradient-to-bl from-red-600/20 via-rose-900/10 to-transparent blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-72 h-72 bg-linear-to-bl from-red-600/20 via-rose-900/10 to-transparent blur-3xl pointer-events-none" />
 
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
         {/* Left Input Sliders */}

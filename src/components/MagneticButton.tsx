@@ -70,7 +70,7 @@ export const MagneticButton: React.FC<MagneticButtonProps> = ({
     >
       {/* Glow Effect in Dark Mode Only */}
       {isDark && (
-        <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-red-500/30 to-rose-600/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md pointer-events-none" />
+        <span className="absolute inset-0 w-full h-full bg-linear-to-r from-red-500/30 to-rose-600/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md pointer-events-none" />
       )}
       <span className="relative z-10 flex items-center gap-2 font-semibold">{children}</span>
     </motion.button>

@@ -76,7 +76,7 @@ export const Home: React.FC = () => {
       <section className="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden">
         {/* Soft Crimson Glow in Dark Mode Only */}
         {isDark && (
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-hero-glow blur-3xl pointer-events-none opacity-60" />
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-100 bg-hero-glow blur-3xl pointer-events-none opacity-60" />
         )}
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -284,9 +284,9 @@ export const Home: React.FC = () => {
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80"
                 alt="NEXUS Digital Team"
-                className="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-100 object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className={`absolute inset-0 bg-gradient-to-t via-transparent to-transparent ${
+              <div className={`absolute inset-0 bg-linear-to-t via-transparent to-transparent ${
                 isDark ? 'from-black' : 'from-white'
               }`} />
             </div>

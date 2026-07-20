@@ -50,7 +50,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
               alt={project.title}
               className="w-full h-full object-cover"
             />
-            <div className={`absolute inset-0 bg-gradient-to-t via-transparent to-transparent ${
+            <div className={`absolute inset-0 bg-linear-to-t via-transparent to-transparent ${
               isDark ? 'from-neutral-950' : 'from-white'
             }`} />
 

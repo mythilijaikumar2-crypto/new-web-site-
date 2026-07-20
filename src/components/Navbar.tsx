@@ -45,7 +45,7 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
         <NavLink to="/" className="flex items-center gap-3 group relative z-50">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#DE0918] via-[#FF3B4A] to-[#690A0F] p-[1.5px] shadow-lg shadow-red-600/40 group-hover:shadow-red-600/70 transition-shadow duration-300">
+          <div className="w-10 h-10 rounded-xl bg-linear-to-tr from-[#DE0918] via-[#FF3B4A] to-[#690A0F] p-[1.5px] shadow-lg shadow-red-600/40 group-hover:shadow-red-600/70 transition-shadow duration-300">
             <div className={`w-full h-full rounded-[10.5px] flex items-center justify-center transition-colors duration-300 ${
               isDark ? 'bg-black' : 'bg-white'
             }`}>
@@ -87,7 +87,7 @@ export const Navbar: React.FC = () => {
                   <motion.div
                     layoutId="activeNavTab"
                     className={`absolute inset-0 rounded-full -z-10 ${
-                      isDark ? 'bg-gradient-to-r from-red-600/30 to-red-900/20 border border-red-500/40' : 'bg-stone-100 border border-stone-300'
+                      isDark ? 'bg-linear-to-r from-red-600/30 to-red-900/20 border border-red-500/40' : 'bg-stone-100 border border-stone-300'
                     }`}
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
@@ -151,7 +151,7 @@ export const Navbar: React.FC = () => {
                     className={({ isActive }) =>
                       `block text-2xl font-heading font-bold py-2 ${
                         isActive
-                          ? 'text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-400'
+                          ? 'text-transparent bg-clip-text bg-linear-to-r from-red-500 to-rose-400'
                           : isDark ? 'text-neutral-300 hover:text-white' : 'text-stone-700 hover:text-black'
                       }`
                     }

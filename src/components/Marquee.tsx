@@ -19,7 +19,7 @@ export const Marquee: React.FC<MarqueeProps> = ({
   return (
     <div className={`overflow-hidden whitespace-nowrap relative flex select-none ${className}`}>
       <motion.div
-        className="flex items-center gap-12 sm:gap-16 min-w-full flex-shrink-0"
+        className="flex items-center gap-12 sm:gap-16 min-w-full shrink-0"
         animate={{
           x: direction === 'left' ? ['0%', '-50%'] : ['-50%', '0%'],
         }}
