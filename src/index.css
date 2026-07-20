@@ -90,12 +90,14 @@
 /* Gradients */
 .text-gradient {
   background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-muted) 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-red {
   background: linear-gradient(135deg, #FF3B4A 0%, #DE0918 50%, #690A0F 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
