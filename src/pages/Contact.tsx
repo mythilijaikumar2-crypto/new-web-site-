@@ -209,54 +209,38 @@ export const Contact: React.FC = () => {
                     href="https://wa.me/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex items-center gap-2.5 p-3 rounded-xl border transition-all hover:scale-[1.02] ${
-                      isDark
-                        ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:text-green-400 hover:border-green-500/50'
-                        : 'bg-stone-50 border-stone-200 text-stone-700 hover:text-green-600 hover:border-green-500/50'
-                    }`}
+                    className="flex items-center gap-2.5 p-3 rounded-xl border transition-all hover:scale-[1.02] bg-[#25D366]/10 border-[#25D366]/30 text-[#25D366] hover:bg-[#25D366] hover:text-white font-semibold"
                   >
-                    <WhatsAppIcon className="w-4 h-4 text-green-500" />
-                    <span className="font-semibold">WhatsApp</span>
+                    <WhatsAppIcon className="w-4 h-4 fill-current" />
+                    <span>WhatsApp</span>
                   </a>
 
                   <a
                     href="https://facebook.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex items-center gap-2.5 p-3 rounded-xl border transition-all hover:scale-[1.02] ${
-                      isDark
-                        ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:text-blue-400 hover:border-blue-500/50'
-                        : 'bg-stone-50 border-stone-200 text-stone-700 hover:text-blue-600 hover:border-blue-500/50'
-                    }`}
+                    className="flex items-center gap-2.5 p-3 rounded-xl border transition-all hover:scale-[1.02] bg-[#1877F2]/10 border-[#1877F2]/30 text-[#1877F2] hover:bg-[#1877F2] hover:text-white font-semibold"
                   >
-                    <FacebookIcon className="w-4 h-4 text-blue-500" />
-                    <span className="font-semibold">Facebook</span>
+                    <FacebookIcon className="w-4 h-4 fill-current" />
+                    <span>Facebook</span>
                   </a>
 
                   <a
                     href="mailto:contact@nexusagency.com"
-                    className={`flex items-center gap-2.5 p-3 rounded-xl border transition-all hover:scale-[1.02] ${
-                      isDark
-                        ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:text-red-400 hover:border-red-500/50'
-                        : 'bg-stone-50 border-stone-200 text-stone-700 hover:text-red-600 hover:border-red-500/50'
-                    }`}
+                    className="flex items-center gap-2.5 p-3 rounded-xl border transition-all hover:scale-[1.02] bg-[#EA4335]/10 border-[#EA4335]/30 text-[#EA4335] hover:bg-[#EA4335] hover:text-white font-semibold"
                   >
-                    <Mail className="w-4 h-4 text-red-500" />
-                    <span className="font-semibold">Email</span>
+                    <Mail className="w-4 h-4 stroke-[2.2]" />
+                    <span>Email</span>
                   </a>
 
                   <a
                     href="https://linkedin.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex items-center gap-2.5 p-3 rounded-xl border transition-all hover:scale-[1.02] ${
-                      isDark
-                        ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:text-blue-400 hover:border-blue-500/50'
-                        : 'bg-stone-50 border-stone-200 text-stone-700 hover:text-blue-600 hover:border-blue-500/50'
-                    }`}
+                    className="flex items-center gap-2.5 p-3 rounded-xl border transition-all hover:scale-[1.02] bg-[#0A66C2]/10 border-[#0A66C2]/30 text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white font-semibold"
                   >
-                    <LinkedinIcon className="w-4 h-4 text-blue-400" />
-                    <span className="font-semibold">LinkedIn</span>
+                    <LinkedinIcon className="w-4 h-4 fill-current" />
+                    <span>LinkedIn</span>
                   </a>
                 </div>
               </div>

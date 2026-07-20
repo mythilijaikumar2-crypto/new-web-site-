@@ -97,11 +97,7 @@ export const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
                 title="WhatsApp"
-                className={`p-2.5 rounded-xl border transition-all duration-300 hover:scale-110 ${
-                  isDark
-                    ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:text-green-400 hover:border-green-500/50'
-                    : 'bg-white border-stone-200 text-stone-700 hover:text-green-600 hover:border-green-500/50 shadow-xs'
-                }`}
+                className="p-2.5 rounded-xl border transition-all duration-300 hover:scale-110 bg-[#25D366]/10 border-[#25D366]/30 text-[#25D366] hover:bg-[#25D366] hover:text-white shadow-xs"
               >
                 <WhatsAppIcon className="w-4 h-4" />
               </a>
@@ -112,11 +108,7 @@ export const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 aria-label="Facebook"
                 title="Facebook"
-                className={`p-2.5 rounded-xl border transition-all duration-300 hover:scale-110 ${
-                  isDark
-                    ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:text-blue-400 hover:border-blue-500/50'
-                    : 'bg-white border-stone-200 text-stone-700 hover:text-blue-600 hover:border-blue-500/50 shadow-xs'
-                }`}
+                className="p-2.5 rounded-xl border transition-all duration-300 hover:scale-110 bg-[#1877F2]/10 border-[#1877F2]/30 text-[#1877F2] hover:bg-[#1877F2] hover:text-white shadow-xs"
               >
                 <FacebookIcon className="w-4 h-4" />
               </a>
@@ -125,11 +117,7 @@ export const Footer: React.FC = () => {
                 href="mailto:contact@nexusagency.com"
                 aria-label="Email"
                 title="Email"
-                className={`p-2.5 rounded-xl border transition-all duration-300 hover:scale-110 ${
-                  isDark
-                    ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:text-red-400 hover:border-red-500/50'
-                    : 'bg-white border-stone-200 text-stone-700 hover:text-red-600 hover:border-red-500/50 shadow-xs'
-                }`}
+                className="p-2.5 rounded-xl border transition-all duration-300 hover:scale-110 bg-[#EA4335]/10 border-[#EA4335]/30 text-[#EA4335] hover:bg-[#EA4335] hover:text-white shadow-xs"
               >
                 <Mail className="w-4 h-4" />
               </a>
@@ -140,11 +128,7 @@ export const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
                 title="LinkedIn"
-                className={`p-2.5 rounded-xl border transition-all duration-300 hover:scale-110 ${
-                  isDark
-                    ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:text-blue-400 hover:border-blue-500/50'
-                    : 'bg-white border-stone-200 text-stone-700 hover:text-blue-600 hover:border-blue-500/50 shadow-xs'
-                }`}
+                className="p-2.5 rounded-xl border transition-all duration-300 hover:scale-110 bg-[#0A66C2]/10 border-[#0A66C2]/30 text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white shadow-xs"
               >
                 <LinkedinIcon className="w-4 h-4" />
               </a>
