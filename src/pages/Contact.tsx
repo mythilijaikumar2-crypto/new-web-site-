@@ -242,7 +242,9 @@ export const Contact: React.FC = () => {
                   </a>
 
                   <a
-                    href="mailto:kevorchsbd@gmail.com"
+                    href="https://mail.google.com/mail/?view=cm&to=kevorchsbd@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2.5 p-3 rounded-xl border transition-all hover:scale-[1.02] bg-[#EA4335]/10 border-[#EA4335]/30 text-[#EA4335] hover:bg-[#EA4335] hover:text-white font-semibold"
                   >
                     <Mail className="w-4 h-4 stroke-[2.2]" />
