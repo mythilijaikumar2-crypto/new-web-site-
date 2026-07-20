@@ -24,12 +24,12 @@ import type { CaseStudy } from '../types';
 import { useTheme } from '../context/ThemeContext';
 
 const HERO_GRAPH_DATA = [
-  { month: 'Jan', revenue: 24000, roas: 3.2 },
-  { month: 'Feb', revenue: 38000, roas: 3.8 },
-  { month: 'Mar', revenue: 52000, roas: 4.1 },
-  { month: 'Apr', revenue: 78000, roas: 4.9 },
-  { month: 'May', revenue: 104000, roas: 5.4 },
-  { month: 'Jun', revenue: 142000, roas: 6.2 },
+  { month: 'Jan', revenue: 28000, roas: 3.4 },
+  { month: 'Feb', revenue: 42000, roas: 3.9 },
+  { month: 'Mar', revenue: 58000, roas: 4.2 },
+  { month: 'Apr', revenue: 84000, roas: 5.1 },
+  { month: 'May', revenue: 112000, roas: 5.6 },
+  { month: 'Jun', revenue: 156000, roas: 6.4 },
 ];
 
 export const Home: React.FC = () => {
@@ -39,7 +39,7 @@ export const Home: React.FC = () => {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 
-  const headlineWords = "We craft digital experiences and scale performance marketing.".split(" ");
+  const headlineWords = "Transform Your Brand With Strategic Performance Marketing.".split(" ");
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -67,13 +67,13 @@ export const Home: React.FC = () => {
       {/* 1. HERO SECTION */}
       {/* ========================================================================= */}
       <section className="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden">
-        {/* Soft Ambient Glow */}
+        {/* Soft Crimson Glow */}
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-hero-glow blur-3xl pointer-events-none opacity-60" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            {/* Left Hero Content */}
+            {/* Left Content */}
             <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
               
               <motion.div
@@ -85,10 +85,10 @@ export const Home: React.FC = () => {
                 }`}
               >
                 <Flame className="w-3.5 h-3.5 text-red-500" />
-                <span>Digital Marketing & Growth Agency</span>
+                <span>Full-Service Digital Marketing Agency</span>
               </motion.div>
 
-              {/* Natural Human Headline */}
+              {/* Large Statement Heading */}
               <motion.h1
                 variants={containerVariants}
                 initial="hidden"
@@ -100,7 +100,7 @@ export const Home: React.FC = () => {
                     key={index}
                     variants={wordVariants}
                     className={`inline-block mr-2.5 ${
-                      word.includes('digital') || word.includes('performance')
+                      word.includes('Strategic') || word.includes('Marketing.')
                         ? 'text-red-500'
                         : isDark ? 'text-white' : 'text-neutral-900'
                     }`}
@@ -110,7 +110,7 @@ export const Home: React.FC = () => {
                 ))}
               </motion.h1>
 
-              {/* Subtitle */}
+              {/* Supporting Description */}
               <motion.p
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -119,10 +119,10 @@ export const Home: React.FC = () => {
                   isDark ? 'text-neutral-400' : 'text-stone-600'
                 }`}
               >
-                We build modern React web applications, manage high-return search & social ad campaigns, and drive organic Google search rankings.
+                We help growing businesses build modern digital experiences, scale search engine visibility, and run high-converting search & social ad campaigns.
               </motion.p>
 
-              {/* CTAs */}
+              {/* Action Buttons */}
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -134,7 +134,7 @@ export const Home: React.FC = () => {
                   size="lg"
                   onClick={() => navigate('/contact')}
                 >
-                  Start a Project <ArrowRight className="w-5 h-5 ml-1" />
+                  Get Started <ArrowRight className="w-5 h-5 ml-1" />
                 </MagneticButton>
 
                 <MagneticButton
@@ -142,11 +142,11 @@ export const Home: React.FC = () => {
                   size="lg"
                   onClick={() => navigate('/clients')}
                 >
-                  View Case Studies <Play className="w-4 h-4 ml-1 fill-current" />
+                  View Our Work <Play className="w-4 h-4 ml-1 fill-current" />
                 </MagneticButton>
               </motion.div>
 
-              {/* Micro Badges */}
+              {/* Trust Micro-Badges */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -156,10 +156,10 @@ export const Home: React.FC = () => {
                 }`}
               >
                 <span className="flex items-center gap-1.5">
-                  <ShieldCheck className="w-4 h-4 text-red-500" /> Google Ads Certified
+                  <ShieldCheck className="w-4 h-4 text-red-500" /> Google Certified
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <ShieldCheck className="w-4 h-4 text-red-500" /> Meta Business Partner
+                  <ShieldCheck className="w-4 h-4 text-red-500" /> Meta Partner
                 </span>
                 <span className="flex items-center gap-1.5">
                   <Star className="w-4 h-4 text-amber-500 fill-amber-500" /> 4.9 Rating
@@ -167,7 +167,7 @@ export const Home: React.FC = () => {
               </motion.div>
             </div>
 
-            {/* Right Clean Analytics Card */}
+            {/* Right Visual Analytics Card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -183,11 +183,11 @@ export const Home: React.FC = () => {
                     <div className="flex items-center gap-2">
                       <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
                       <span className={`text-xs font-mono font-medium ${isDark ? 'text-neutral-300' : 'text-stone-700'}`}>
-                        Performance Overview
+                        Analytics Overview
                       </span>
                     </div>
                     <span className="text-[11px] font-mono text-red-500 font-semibold">
-                      Q2 Client Growth
+                      Live Performance
                     </span>
                   </div>
 
@@ -195,7 +195,7 @@ export const Home: React.FC = () => {
                     <div className={`p-3.5 rounded-2xl border ${
                       isDark ? 'bg-neutral-900/60 border-neutral-800' : 'bg-stone-50 border-stone-200'
                     }`}>
-                      <span className={`text-[11px] font-mono ${isDark ? 'text-neutral-400' : 'text-stone-500'}`}>Avg Campaign ROAS</span>
+                      <span className={`text-[11px] font-mono ${isDark ? 'text-neutral-400' : 'text-stone-500'}`}>Campaign ROAS</span>
                       <div className="text-2xl font-bold font-number text-red-500 mt-1">4.8x</div>
                     </div>
 
@@ -211,14 +211,14 @@ export const Home: React.FC = () => {
                     isDark ? 'bg-neutral-900/60 border-neutral-800' : 'bg-stone-50 border-stone-200'
                   }`}>
                     <div className="flex items-center justify-between text-xs">
-                      <span className={`font-medium ${isDark ? 'text-neutral-300' : 'text-stone-700'}`}>Tracked Revenue Lift</span>
-                      <span className="font-mono text-red-500 font-bold">$142,000 / mo</span>
+                      <span className={`font-medium ${isDark ? 'text-neutral-300' : 'text-stone-700'}`}>Tracked Revenue Growth</span>
+                      <span className="font-mono text-red-500 font-bold">$156,000 / mo</span>
                     </div>
                     <div className="h-36 w-full">
                       <ResponsiveContainer width="100%" height="100%">
                         <AreaChart data={HERO_GRAPH_DATA}>
                           <defs>
-                            <linearGradient id="colorRevRedSimple" x1="0" y1="0" x2="0" y2="1">
+                            <linearGradient id="colorRevRedInf" x1="0" y1="0" x2="0" y2="1">
                               <stop offset="5%" stopColor="#DE0918" stopOpacity={0.6} />
                               <stop offset="95%" stopColor="#DE0918" stopOpacity={0.0} />
                             </linearGradient>
@@ -234,7 +234,7 @@ export const Home: React.FC = () => {
                               color: isDark ? '#FFF' : '#000'
                             }}
                           />
-                          <Area type="monotone" dataKey="revenue" stroke="#DE0918" strokeWidth={2} fillOpacity={1} fill="url(#colorRevRedSimple)" />
+                          <Area type="monotone" dataKey="revenue" stroke="#DE0918" strokeWidth={2} fillOpacity={1} fill="url(#colorRevRedInf)" />
                         </AreaChart>
                       </ResponsiveContainer>
                     </div>
@@ -249,16 +249,21 @@ export const Home: React.FC = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 2. CLIENT LOGO MARQUEE */}
+      {/* 2. CLIENT SHOWCASE SECTION */}
       {/* ========================================================================= */}
       <section className={`py-10 border-y transition-colors ${
         isDark ? 'bg-neutral-950 border-neutral-800/80' : 'bg-stone-50 border-stone-200'
       }`}>
-        <Marquee items={CLIENT_LOGOS} speed={30} />
+        <div className="max-w-7xl mx-auto px-4 mb-4 text-center">
+          <span className="text-xs font-mono tracking-widest text-red-500 uppercase font-semibold">
+            Trusted By Market Leaders
+          </span>
+        </div>
+        <Marquee items={CLIENT_LOGOS} speed={25} />
       </section>
 
       {/* ========================================================================= */}
-      {/* 3. ABOUT PREVIEW SECTION */}
+      {/* 3. WHY CHOOSE US / AGENCY OVERVIEW */}
       {/* ========================================================================= */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -267,7 +272,7 @@ export const Home: React.FC = () => {
             <div className="relative rounded-3xl overflow-hidden border border-neutral-800 group">
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80"
-                alt="NEXUS Agency Team"
+                alt="NEXUS Digital Team"
                 className="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className={`absolute inset-0 bg-gradient-to-t via-transparent to-transparent ${
@@ -278,15 +283,15 @@ export const Home: React.FC = () => {
 
           <div className="lg:col-span-6 space-y-6">
             <span className="text-xs font-mono uppercase tracking-widest text-red-500 font-semibold">
-              // About NEXUS
+              // Why Choose NEXUS
             </span>
             <h2 className={`text-3xl sm:text-4xl font-heading font-bold leading-tight ${
               isDark ? 'text-white' : 'text-neutral-900'
             }`}>
-              A dedicated team of growth strategists & web developers.
+              Dedicated marketing leads & modern frontend developers.
             </h2>
             <p className={`text-base leading-relaxed ${isDark ? 'text-neutral-400' : 'text-stone-600'}`}>
-              We work directly with founders and marketing teams to build clean digital experiences and manage high-ROI advertising campaigns.
+              We partner directly with business leads and marketing directors to build modern React applications, optimize local search rankings, and manage profitable ad spend.
             </p>
 
             <div className="grid grid-cols-2 gap-4 pt-2">
@@ -294,18 +299,18 @@ export const Home: React.FC = () => {
                 isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-stone-50 border-stone-200'
               }`}>
                 <span className="text-2xl font-bold font-number text-red-500">98%</span>
-                <p className={`text-xs mt-1 ${isDark ? 'text-neutral-400' : 'text-stone-500'}`}>Client Retention</p>
+                <p className={`text-xs mt-1 ${isDark ? 'text-neutral-400' : 'text-stone-500'}`}>Client Satisfaction</p>
               </div>
               <div className={`p-4 rounded-2xl border ${
                 isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-stone-50 border-stone-200'
               }`}>
-                <span className="text-2xl font-bold font-number text-red-500">120+</span>
-                <p className={`text-xs mt-1 ${isDark ? 'text-neutral-400' : 'text-stone-500'}`}>Projects Delivered</p>
+                <span className="text-2xl font-bold font-number text-red-500">100+</span>
+                <p className={`text-xs mt-1 ${isDark ? 'text-neutral-400' : 'text-stone-500'}`}>Successful Campaigns</p>
               </div>
             </div>
 
             <NavLink to="/about" className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-red-500 hover:text-red-400 pt-2 group">
-              Read Our Full Story <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              Learn More About Our Team <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </NavLink>
           </div>
 
@@ -313,7 +318,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 4. SERVICES OVERVIEW GRID */}
+      {/* 4. SERVICES SECTION */}
       {/* ========================================================================= */}
       <section className={`py-24 border-y transition-colors ${
         isDark ? 'bg-neutral-950 border-neutral-800/80' : 'bg-stone-50 border-stone-200'
@@ -322,12 +327,12 @@ export const Home: React.FC = () => {
           
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-red-500 font-semibold">
-              // What We Do
+              // Our Services
             </span>
             <h2 className={`text-3xl sm:text-4xl font-heading font-bold ${
               isDark ? 'text-white' : 'text-neutral-900'
             }`}>
-              Core Agency Capabilities
+              Comprehensive Growth Solutions
             </h2>
           </div>
 
@@ -387,17 +392,17 @@ export const Home: React.FC = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 5. PROCESS TIMELINE */}
+      {/* 5. PROCESS SECTION */}
       {/* ========================================================================= */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
           <span className="text-xs font-mono uppercase tracking-widest text-red-500 font-semibold">
-            // Our Process
+            // How We Work
           </span>
           <h2 className={`text-3xl sm:text-4xl font-heading font-bold ${
             isDark ? 'text-white' : 'text-neutral-900'
           }`}>
-            Simple 4-Step Approach
+            Clear 4-Step Methodology
           </h2>
         </div>
 
@@ -406,9 +411,9 @@ export const Home: React.FC = () => {
             isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-stone-50 border-stone-200'
           }`}>
             <span className="text-2xl font-bold font-number text-red-500">01</span>
-            <h3 className={`text-lg font-heading font-bold ${isDark ? 'text-white' : 'text-neutral-900'}`}>Audit & Plan</h3>
+            <h3 className={`text-lg font-heading font-bold ${isDark ? 'text-white' : 'text-neutral-900'}`}>Discovery & Audit</h3>
             <p className={`text-xs leading-relaxed ${isDark ? 'text-neutral-400' : 'text-stone-600'}`}>
-              We review your existing analytics, ad campaigns, and website load performance.
+              Reviewing active advertising accounts, SEO rankings, and website technical performance.
             </p>
           </div>
 
@@ -416,9 +421,9 @@ export const Home: React.FC = () => {
             isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-stone-50 border-stone-200'
           }`}>
             <span className="text-2xl font-bold font-number text-red-500">02</span>
-            <h3 className={`text-lg font-heading font-bold ${isDark ? 'text-white' : 'text-neutral-900'}`}>Design & Strategy</h3>
+            <h3 className={`text-lg font-heading font-bold ${isDark ? 'text-white' : 'text-neutral-900'}`}>Strategy & Design</h3>
             <p className={`text-xs leading-relaxed ${isDark ? 'text-neutral-400' : 'text-stone-600'}`}>
-              Drafting ad campaign structures, landing page copy, and interface prototypes.
+              Structuring ad campaign hierarchy, landing page copy, and responsive UI wireframes.
             </p>
           </div>
 
@@ -428,7 +433,7 @@ export const Home: React.FC = () => {
             <span className="text-2xl font-bold font-number text-red-500">03</span>
             <h3 className={`text-lg font-heading font-bold ${isDark ? 'text-white' : 'text-neutral-900'}`}>Build & Launch</h3>
             <p className={`text-xs leading-relaxed ${isDark ? 'text-neutral-400' : 'text-stone-600'}`}>
-              Developing high-speed web code, creating ad creatives, and launching search ads.
+              Developing fast web code, launching ad campaigns, and setting up conversion tracking.
             </p>
           </div>
 
@@ -438,7 +443,7 @@ export const Home: React.FC = () => {
             <span className="text-2xl font-bold font-number text-red-500">04</span>
             <h3 className={`text-lg font-heading font-bold ${isDark ? 'text-white' : 'text-neutral-900'}`}>Optimize & Scale</h3>
             <p className={`text-xs leading-relaxed ${isDark ? 'text-neutral-400' : 'text-stone-600'}`}>
-              Continuous weekly testing, bid adjustments, and transparent performance reporting.
+              Continuous bid optimization, A/B ad copy testing, and transparent performance updates.
             </p>
           </div>
         </div>
@@ -451,22 +456,22 @@ export const Home: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6">
           <div className="space-y-3">
             <span className="text-xs font-mono uppercase tracking-widest text-red-500 font-semibold">
-              // Client Work
+              // Client Success
             </span>
             <h2 className={`text-3xl sm:text-4xl font-heading font-bold ${
               isDark ? 'text-white' : 'text-neutral-900'
             }`}>
-              Featured Projects
+              Featured Work
             </h2>
           </div>
 
           <NavLink to="/clients" className="text-sm font-heading font-semibold text-red-500 hover:text-red-400 flex items-center gap-1">
-            View All Work <ArrowRight className="w-4 h-4" />
+            View All Clients <ArrowRight className="w-4 h-4" />
           </NavLink>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {CASE_STUDIES.slice(0, 4).map((study) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {CASE_STUDIES.map((study) => (
             <div
               key={study.id}
               onClick={() => setSelectedProject(study)}
@@ -474,7 +479,7 @@ export const Home: React.FC = () => {
                 isDark ? 'bg-neutral-950 border-neutral-800 hover:border-red-500/50' : 'bg-white border-stone-200 hover:border-red-400 shadow-sm'
               }`}
             >
-              <div className="relative h-60 overflow-hidden">
+              <div className="relative h-56 overflow-hidden">
                 <img
                   src={study.imageUrl}
                   alt={study.title}
@@ -514,7 +519,7 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Detail Modal */}
+      {/* Case Study Modal */}
       <ProjectModal
         project={selectedProject}
         onClose={() => setSelectedProject(null)}
@@ -529,7 +534,7 @@ export const Home: React.FC = () => {
       }`}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 text-center">
           <span className="text-xs font-mono uppercase tracking-widest text-red-500 font-semibold">
-            // Testimonials
+            // Client Testimonials
           </span>
 
           <div className={`rounded-3xl p-8 sm:p-12 border relative space-y-8 ${
@@ -595,14 +600,14 @@ export const Home: React.FC = () => {
           <p className={`max-w-xl mx-auto text-sm sm:text-base ${
             isDark ? 'text-neutral-400' : 'text-stone-600'
           }`}>
-            Book a 30-minute growth consultation with our leads. We'll review your active ad channels and website load performance.
+            Book a 30-minute strategic consultation with our leads. We will review your current ad performance and digital presence.
           </p>
           <MagneticButton
             variant="primary"
             size="lg"
             onClick={() => navigate('/contact')}
           >
-            Schedule Strategy Call <ArrowRight className="w-5 h-5 ml-1" />
+            Get Started Today <ArrowRight className="w-5 h-5 ml-1" />
           </MagneticButton>
         </div>
       </section>
