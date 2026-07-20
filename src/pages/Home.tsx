@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { NavLink, useNavigate } from 'react-router-dom';
 import {
@@ -38,6 +38,13 @@ export const Home: React.FC = () => {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const { theme } = useTheme();
   const isDark = theme === 'dark';
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveTestimonial((prev) => (prev + 1) % TESTIMONIALS.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   const headlineWords = "Transform Your Brand With Strategic Performance Marketing.".split(" ");
 
