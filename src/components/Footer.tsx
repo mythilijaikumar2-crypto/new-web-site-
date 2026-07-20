@@ -131,7 +131,7 @@ export const Footer: React.FC = () => {
               </a>
 
               <a
-                href="mailto:contact@nexusagency.com"
+                href="mailto:kevorchsbd@gmail.com"
                 aria-label="Email"
                 title="Email"
                 className="p-2.5 rounded-xl border transition-all duration-300 hover:scale-110 bg-[#EA4335]/10 border-[#EA4335]/30 text-[#EA4335] hover:bg-[#EA4335] hover:text-white shadow-xs"

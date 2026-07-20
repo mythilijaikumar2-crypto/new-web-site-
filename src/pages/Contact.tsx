@@ -174,7 +174,7 @@ export const Contact: React.FC = () => {
                   </div>
                   <div>
                     <span className={`text-xs font-mono ${isDark ? 'text-red-500' : 'text-stone-600'}`}>Inquiries & Proposals</span>
-                    <p className={`font-semibold ${isDark ? 'text-white' : 'text-neutral-900'}`}>growth@nexusagency.com</p>
+                    <p className={`font-semibold ${isDark ? 'text-white' : 'text-neutral-900'}`}>kevorchsbd@gmail.com</p>
                   </div>
                 </div>
 
@@ -242,7 +242,7 @@ export const Contact: React.FC = () => {
                   </a>
 
                   <a
-                    href="mailto:contact@nexusagency.com"
+                    href="mailto:kevorchsbd@gmail.com"
                     className="flex items-center gap-2.5 p-3 rounded-xl border transition-all hover:scale-[1.02] bg-[#EA4335]/10 border-[#EA4335]/30 text-[#EA4335] hover:bg-[#EA4335] hover:text-white font-semibold"
                   >
                     <Mail className="w-4 h-4 stroke-[2.2]" />
