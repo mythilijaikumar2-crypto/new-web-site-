@@ -16,6 +16,24 @@ import { FAQS_DATA } from '../data/mockData';
 import { MagneticButton } from '../components/MagneticButton';
 import { useTheme } from '../context/ThemeContext';
 
+const WhatsAppIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5" }) => (
+  <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.157 4.228 4.228-1.157zm11.391-4.707c-.305-.153-1.805-.89-2.085-.99-.28-.101-.484-.153-.689.153-.204.305-.79 1.018-.968 1.222-.178.204-.356.229-.661.076-.305-.153-1.288-.475-2.453-1.514-.908-.81-1.52-1.81-1.698-2.115-.178-.305-.019-.47.133-.622.137-.137.305-.356.457-.534.153-.178.204-.305.305-.509.102-.204.051-.382-.025-.534-.076-.153-.689-1.658-.945-2.273-.249-.597-.502-.516-.689-.525l-.585-.01c-.204 0-.534.076-.814.382-.28.305-1.07 1.045-1.07 2.549 0 1.504 1.096 2.955 1.248 3.159.153.204 2.158 3.296 5.228 4.622.73.316 1.3.504 1.744.645.733.234 1.399.2 1.926.121.587-.088 1.805-.738 2.06-1.45.254-.712.254-1.323.178-1.45-.076-.127-.28-.203-.585-.356z"/>
+  </svg>
+);
+
+const FacebookIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5" }) => (
+  <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+  </svg>
+);
+
+const LinkedinIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5" }) => (
+  <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+  </svg>
+);
+
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -176,6 +194,70 @@ export const Contact: React.FC = () => {
                     <span className={`text-xs font-mono ${isDark ? 'text-red-500' : 'text-stone-600'}`}>Guaranteed Response Time</span>
                     <p className={`font-semibold ${isDark ? 'text-white' : 'text-neutral-900'}`}>Under 12 Hours</p>
                   </div>
+                </div>
+              </div>
+
+              {/* Social Media Channels: WhatsApp, Facebook, Email, LinkedIn */}
+              <div className="pt-4 border-t border-stone-200 dark:border-neutral-800 space-y-3">
+                <span className={`text-xs font-mono font-semibold uppercase tracking-wider block ${
+                  isDark ? 'text-red-500' : 'text-stone-600'
+                }`}>
+                  Official Social Channels
+                </span>
+                <div className="grid grid-cols-2 gap-3 text-xs">
+                  <a
+                    href="https://wa.me/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex items-center gap-2.5 p-3 rounded-xl border transition-all hover:scale-[1.02] ${
+                      isDark
+                        ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:text-green-400 hover:border-green-500/50'
+                        : 'bg-stone-50 border-stone-200 text-stone-700 hover:text-green-600 hover:border-green-500/50'
+                    }`}
+                  >
+                    <WhatsAppIcon className="w-4 h-4 text-green-500" />
+                    <span className="font-semibold">WhatsApp</span>
+                  </a>
+
+                  <a
+                    href="https://facebook.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex items-center gap-2.5 p-3 rounded-xl border transition-all hover:scale-[1.02] ${
+                      isDark
+                        ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:text-blue-400 hover:border-blue-500/50'
+                        : 'bg-stone-50 border-stone-200 text-stone-700 hover:text-blue-600 hover:border-blue-500/50'
+                    }`}
+                  >
+                    <FacebookIcon className="w-4 h-4 text-blue-500" />
+                    <span className="font-semibold">Facebook</span>
+                  </a>
+
+                  <a
+                    href="mailto:contact@nexusagency.com"
+                    className={`flex items-center gap-2.5 p-3 rounded-xl border transition-all hover:scale-[1.02] ${
+                      isDark
+                        ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:text-red-400 hover:border-red-500/50'
+                        : 'bg-stone-50 border-stone-200 text-stone-700 hover:text-red-600 hover:border-red-500/50'
+                    }`}
+                  >
+                    <Mail className="w-4 h-4 text-red-500" />
+                    <span className="font-semibold">Email</span>
+                  </a>
+
+                  <a
+                    href="https://linkedin.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex items-center gap-2.5 p-3 rounded-xl border transition-all hover:scale-[1.02] ${
+                      isDark
+                        ? 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:text-blue-400 hover:border-blue-500/50'
+                        : 'bg-stone-50 border-stone-200 text-stone-700 hover:text-blue-600 hover:border-blue-500/50'
+                    }`}
+                  >
+                    <LinkedinIcon className="w-4 h-4 text-blue-400" />
+                    <span className="font-semibold">LinkedIn</span>
+                  </a>
                 </div>
               </div>
             </div>
