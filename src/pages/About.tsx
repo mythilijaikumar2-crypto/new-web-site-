@@ -33,10 +33,10 @@ export const About: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border text-xs font-mono ${
-            isDark ? 'border-red-900/40 bg-neutral-900/60 text-red-400' : 'border-red-200 bg-red-50/50 text-red-600'
+            isDark ? 'border-red-900/40 bg-neutral-900/60 text-red-400' : 'border-stone-300 bg-stone-100 text-stone-800'
           }`}
         >
-          <Flame className="w-3.5 h-3.5 text-red-500" />
+          <Flame className={`w-3.5 h-3.5 ${isDark ? 'text-red-500' : 'text-slate-800'}`} />
           <span>About NEXUS Agency</span>
         </motion.div>
 
@@ -46,7 +46,7 @@ export const About: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-4xl sm:text-6xl font-heading font-extrabold tracking-tight leading-tight"
         >
-          Building Modern <span className="text-red-500">Digital Experiences</span> & Driving Growth
+          Building Modern <span className={isDark ? "text-red-500" : "text-slate-950 font-extrabold"}>Digital Experiences</span> & Driving Growth
         </motion.h1>
 
         <motion.p
@@ -65,19 +65,19 @@ export const About: React.FC = () => {
       <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           <div className={`p-6 rounded-3xl border text-center ${isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-stone-50 border-stone-200'}`}>
-            <span className="text-3xl font-bold font-number text-red-500">100+</span>
+            <span className={`text-3xl font-bold font-number ${isDark ? 'text-red-500' : 'text-slate-950'}`}>100+</span>
             <p className={`text-xs mt-1 font-medium ${isDark ? 'text-neutral-400' : 'text-stone-600'}`}>Successful Projects</p>
           </div>
           <div className={`p-6 rounded-3xl border text-center ${isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-stone-50 border-stone-200'}`}>
-            <span className="text-3xl font-bold font-number text-red-500">98%</span>
+            <span className={`text-3xl font-bold font-number ${isDark ? 'text-red-500' : 'text-slate-950'}`}>98%</span>
             <p className={`text-xs mt-1 font-medium ${isDark ? 'text-neutral-400' : 'text-stone-600'}`}>Client Retention Rate</p>
           </div>
           <div className={`p-6 rounded-3xl border text-center ${isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-stone-50 border-stone-200'}`}>
-            <span className="text-3xl font-bold font-number text-red-500">4.9/5</span>
+            <span className={`text-3xl font-bold font-number ${isDark ? 'text-red-500' : 'text-slate-950'}`}>4.9/5</span>
             <p className={`text-xs mt-1 font-medium ${isDark ? 'text-neutral-400' : 'text-stone-600'}`}>Average Rating</p>
           </div>
           <div className={`p-6 rounded-3xl border text-center ${isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-stone-50 border-stone-200'}`}>
-            <span className="text-3xl font-bold font-number text-red-500">4.8x</span>
+            <span className={`text-3xl font-bold font-number ${isDark ? 'text-red-500' : 'text-slate-950'}`}>4.8x</span>
             <p className={`text-xs mt-1 font-medium ${isDark ? 'text-neutral-400' : 'text-stone-600'}`}>Average Campaign ROAS</p>
           </div>
         </div>
@@ -91,7 +91,9 @@ export const About: React.FC = () => {
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <span className="text-xs font-mono uppercase tracking-widest text-red-500 font-semibold">
+            <span className={`text-xs font-mono uppercase tracking-widest font-semibold ${
+              isDark ? 'text-red-500' : 'text-stone-700'
+            }`}>
               // Core Foundations
             </span>
             <h2 className={`text-3xl font-heading font-bold ${isDark ? 'text-white' : 'text-neutral-900'}`}>
@@ -101,7 +103,9 @@ export const About: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className={`rounded-3xl p-8 border space-y-4 ${isDark ? 'bg-black border-neutral-800' : 'bg-white border-stone-200 shadow-xs'}`}>
-              <div className="w-10 h-10 rounded-2xl bg-red-600/15 border border-red-500/30 flex items-center justify-center text-red-500">
+              <div className={`w-10 h-10 rounded-2xl border flex items-center justify-center ${
+                isDark ? 'bg-red-600/15 border-red-500/30 text-red-500' : 'bg-stone-100 border-stone-200 text-slate-800'
+              }`}>
                 <Target className="w-5 h-5" />
               </div>
               <h3 className={`text-xl font-heading font-bold ${isDark ? 'text-white' : 'text-neutral-900'}`}>Our Mission</h3>
@@ -111,7 +115,9 @@ export const About: React.FC = () => {
             </div>
 
             <div className={`rounded-3xl p-8 border space-y-4 ${isDark ? 'bg-black border-neutral-800' : 'bg-white border-stone-200 shadow-xs'}`}>
-              <div className="w-10 h-10 rounded-2xl bg-red-600/15 border border-red-500/30 flex items-center justify-center text-red-500">
+              <div className={`w-10 h-10 rounded-2xl border flex items-center justify-center ${
+                isDark ? 'bg-red-600/15 border-red-500/30 text-red-500' : 'bg-stone-100 border-stone-200 text-slate-800'
+              }`}>
                 <Eye className="w-5 h-5" />
               </div>
               <h3 className={`text-xl font-heading font-bold ${isDark ? 'text-white' : 'text-neutral-900'}`}>Our Vision</h3>
@@ -121,7 +127,9 @@ export const About: React.FC = () => {
             </div>
 
             <div className={`rounded-3xl p-8 border space-y-4 ${isDark ? 'bg-black border-neutral-800' : 'bg-white border-stone-200 shadow-xs'}`}>
-              <div className="w-10 h-10 rounded-2xl bg-red-600/15 border border-red-500/30 flex items-center justify-center text-red-500">
+              <div className={`w-10 h-10 rounded-2xl border flex items-center justify-center ${
+                isDark ? 'bg-red-600/15 border-red-500/30 text-red-500' : 'bg-stone-100 border-stone-200 text-slate-800'
+              }`}>
                 <Shield className="w-5 h-5" />
               </div>
               <h3 className={`text-xl font-heading font-bold ${isDark ? 'text-white' : 'text-neutral-900'}`}>Our Values</h3>
@@ -138,7 +146,9 @@ export const About: React.FC = () => {
       {/* ========================================================================= */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-mono uppercase tracking-widest text-red-500 font-semibold">
+          <span className={`text-xs font-mono uppercase tracking-widest font-semibold ${
+            isDark ? 'text-red-500' : 'text-stone-700'
+          }`}>
             // History
           </span>
           <h2 className={`text-3xl font-heading font-bold ${isDark ? 'text-white' : 'text-neutral-900'}`}>
@@ -151,7 +161,9 @@ export const About: React.FC = () => {
             <div key={idx} className={`rounded-3xl p-6 border space-y-3 ${
               isDark ? 'bg-neutral-950 border-neutral-800' : 'bg-white border-stone-200 shadow-xs'
             }`}>
-              <span className="text-xs font-mono font-bold px-3 py-1 rounded-full bg-red-600/20 text-red-500 border border-red-500/30">
+              <span className={`text-xs font-mono font-bold px-3 py-1 rounded-full border ${
+                isDark ? 'bg-red-600/20 text-red-500 border-red-500/30' : 'bg-stone-100 text-slate-900 border-stone-200'
+              }`}>
                 {item.year}
               </span>
               <h3 className={`text-base font-heading font-bold pt-2 ${isDark ? 'text-white' : 'text-neutral-900'}`}>{item.title}</h3>

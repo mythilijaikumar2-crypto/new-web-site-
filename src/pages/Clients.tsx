@@ -41,10 +41,10 @@ export const Clients: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-card border text-xs font-mono ${
-            isDark ? 'border-red-900/40 text-red-400' : 'border-red-200 text-red-600 shadow-xs'
+            isDark ? 'border-red-900/40 text-red-400' : 'border-stone-300 bg-stone-100 text-stone-800'
           }`}
         >
-          <Flame className="w-3.5 h-3.5 text-red-500" />
+          <Flame className={`w-3.5 h-3.5 ${isDark ? 'text-red-500' : 'text-slate-800'}`} />
           <span>Case Studies & Track Record</span>
         </motion.div>
 
@@ -54,7 +54,7 @@ export const Clients: React.FC = () => {
           transition={{ delay: 0.1 }}
           className="text-4xl sm:text-6xl font-heading font-extrabold tracking-tight leading-tight"
         >
-          Real Business Impact, <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-rose-500 to-red-800">Audited Results</span>
+          Real Business Impact, <span className={isDark ? "text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-rose-500 to-red-800" : "text-slate-950 font-extrabold"}>Audited Results</span>
         </motion.h1>
 
         <p className={`text-base sm:text-lg leading-relaxed ${isDark ? 'text-neutral-400' : 'text-stone-600'}`}>
@@ -64,20 +64,20 @@ export const Clients: React.FC = () => {
         {/* Aggregate Stats Banner */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-6 text-left">
           <div className={`p-5 rounded-2xl border ${isDark ? 'bg-neutral-950 border-red-900/30' : 'bg-stone-50 border-stone-200'}`}>
-            <span className="text-xs font-mono text-red-500">Combined Client Revenue</span>
-            <div className="text-2xl sm:text-3xl font-bold font-number text-red-500 mt-1">$236.7M</div>
+            <span className={`text-xs font-mono ${isDark ? 'text-red-500' : 'text-stone-600'}`}>Combined Client Revenue</span>
+            <div className={`text-2xl sm:text-3xl font-bold font-number mt-1 ${isDark ? 'text-red-500' : 'text-slate-950'}`}>$236.7M</div>
           </div>
           <div className={`p-5 rounded-2xl border ${isDark ? 'bg-neutral-950 border-red-900/30' : 'bg-stone-50 border-stone-200'}`}>
-            <span className="text-xs font-mono text-red-500">Avg ROAS Delivered</span>
-            <div className="text-2xl sm:text-3xl font-bold font-number text-red-500 mt-1">5.4x</div>
+            <span className={`text-xs font-mono ${isDark ? 'text-red-500' : 'text-stone-600'}`}>Avg ROAS Delivered</span>
+            <div className={`text-2xl sm:text-3xl font-bold font-number mt-1 ${isDark ? 'text-red-500' : 'text-slate-950'}`}>5.4x</div>
           </div>
           <div className={`p-5 rounded-2xl border ${isDark ? 'bg-neutral-950 border-red-900/30' : 'bg-stone-50 border-stone-200'}`}>
-            <span className="text-xs font-mono text-red-500">Organic Traffic Lift</span>
-            <div className="text-2xl sm:text-3xl font-bold font-number text-red-500 mt-1">+510%</div>
+            <span className={`text-xs font-mono ${isDark ? 'text-red-500' : 'text-stone-600'}`}>Organic Traffic Lift</span>
+            <div className={`text-2xl sm:text-3xl font-bold font-number mt-1 ${isDark ? 'text-red-500' : 'text-slate-950'}`}>+510%</div>
           </div>
           <div className={`p-5 rounded-2xl border ${isDark ? 'bg-neutral-950 border-red-900/30' : 'bg-stone-50 border-stone-200'}`}>
-            <span className="text-xs font-mono text-red-500">Client NPS Score</span>
-            <div className="text-2xl sm:text-3xl font-bold font-number text-red-500 mt-1">94.8</div>
+            <span className={`text-xs font-mono ${isDark ? 'text-red-500' : 'text-stone-600'}`}>Client NPS Score</span>
+            <div className={`text-2xl sm:text-3xl font-bold font-number mt-1 ${isDark ? 'text-red-500' : 'text-slate-950'}`}>94.8</div>
           </div>
         </div>
       </section>
@@ -103,7 +103,7 @@ export const Clients: React.FC = () => {
               onClick={() => setSelectedTag(tag)}
               className={`px-5 py-2 rounded-full text-xs font-heading font-semibold transition-all cursor-pointer ${
                 selectedTag === tag
-                  ? 'bg-gradient-to-r from-red-600 to-rose-800 text-white shadow-lg'
+                  ? isDark ? 'bg-gradient-to-r from-red-600 to-rose-800 text-white shadow-lg' : 'bg-slate-950 text-white shadow-sm'
                   : isDark ? 'bg-neutral-900 text-neutral-400 border border-neutral-800 hover:text-white' : 'bg-stone-100 text-stone-600 border border-stone-200 hover:text-black'
               }`}
             >
@@ -119,13 +119,13 @@ export const Clients: React.FC = () => {
               key={study.id}
               onClick={() => setSelectedProject(study)}
               className={`rounded-3xl p-7 border transition-all duration-300 group cursor-pointer flex flex-col justify-between space-y-6 ${
-                isDark ? 'bg-neutral-950 border-red-900/30 hover:border-red-500/50' : 'bg-white border-stone-200 hover:border-red-400 shadow-sm'
+                isDark ? 'bg-neutral-950 border-red-900/30 hover:border-red-500/50' : 'bg-white border-stone-200 hover:border-stone-400 shadow-sm'
               }`}
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <span className={`px-3 py-1 rounded-full text-xs font-mono font-bold border ${
-                    isDark ? 'bg-black border-red-900/40 text-red-400' : 'bg-stone-100 border-stone-200 text-red-600'
+                    isDark ? 'bg-black border-red-900/40 text-red-400' : 'bg-stone-100 border-stone-200 text-slate-900'
                   }`}>
                     {study.client}
                   </span>
@@ -134,8 +134,8 @@ export const Clients: React.FC = () => {
                   </span>
                 </div>
 
-                <h3 className={`text-xl font-heading font-bold group-hover:text-red-500 transition-colors ${
-                  isDark ? 'text-white' : 'text-neutral-900'
+                <h3 className={`text-xl font-heading font-bold transition-colors ${
+                  isDark ? 'text-white group-hover:text-red-500' : 'text-neutral-900 group-hover:text-slate-950'
                 }`}>
                   {study.title}
                 </h3>
@@ -147,17 +147,17 @@ export const Clients: React.FC = () => {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-2 text-xs">
                   <div className={`p-2.5 rounded-xl border ${isDark ? 'bg-black border-neutral-900' : 'bg-stone-50 border-stone-200'}`}>
-                    <span className="text-red-500 block font-mono text-[10px]">ROI Multiplier</span>
-                    <span className="font-bold font-number text-red-500">{study.results.roi}</span>
+                    <span className={`block font-mono text-[10px] ${isDark ? 'text-red-500' : 'text-stone-600'}`}>ROI Multiplier</span>
+                    <span className={`font-bold font-number ${isDark ? 'text-red-500' : 'text-slate-950'}`}>{study.results.roi}</span>
                   </div>
                   <div className={`p-2.5 rounded-xl border ${isDark ? 'bg-black border-neutral-900' : 'bg-stone-50 border-stone-200'}`}>
-                    <span className="text-red-500 block font-mono text-[10px]">Revenue Impact</span>
-                    <span className="font-bold font-number text-red-500">{study.results.revenue}</span>
+                    <span className={`block font-mono text-[10px] ${isDark ? 'text-red-500' : 'text-stone-600'}`}>Revenue Impact</span>
+                    <span className={`font-bold font-number ${isDark ? 'text-red-500' : 'text-slate-950'}`}>{study.results.revenue}</span>
                   </div>
                 </div>
 
-                <div className={`pt-3 border-t flex items-center justify-between text-xs text-red-500 font-semibold ${
-                  isDark ? 'border-neutral-900' : 'border-stone-200'
+                <div className={`pt-3 border-t flex items-center justify-between text-xs font-semibold ${
+                  isDark ? 'border-neutral-900 text-red-500' : 'border-stone-200 text-slate-900'
                 }`}>
                   <span>Read Full Case Study</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -183,7 +183,9 @@ export const Clients: React.FC = () => {
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <span className="text-xs font-mono uppercase tracking-widest text-red-500 font-semibold">
+            <span className={`text-xs font-mono uppercase tracking-widest font-semibold ${
+              isDark ? 'text-red-500' : 'text-stone-700'
+            }`}>
               // Performance Transformation
             </span>
             <h2 className={`text-3xl sm:text-4xl font-heading font-bold ${isDark ? 'text-white' : 'text-neutral-900'}`}>
@@ -203,15 +205,15 @@ export const Clients: React.FC = () => {
               </span>
               <ul className={`space-y-3 text-sm ${isDark ? 'text-neutral-300' : 'text-stone-700'}`}>
                 <li className="flex items-start gap-2.5">
-                  <span className="text-red-500 font-bold">•</span>
+                  <span className={`font-bold ${isDark ? 'text-red-500' : 'text-stone-500'}`}>•</span>
                   <span>Average 1.8x ROAS with high acquisition costs ($300+ per lead)</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="text-red-500 font-bold">•</span>
+                  <span className={`font-bold ${isDark ? 'text-red-500' : 'text-stone-500'}`}>•</span>
                   <span>Legacy WordPress site loading in 5.8s with 72% mobile bounce rate</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="text-red-500 font-bold">•</span>
+                  <span className={`font-bold ${isDark ? 'text-red-500' : 'text-stone-500'}`}>•</span>
                   <span>Opaque monthly PDF reports with zero live attribution dashboards</span>
                 </li>
               </ul>
@@ -219,14 +221,16 @@ export const Clients: React.FC = () => {
 
             {/* After */}
             <div className={`glass-card rounded-3xl p-8 border space-y-4 ${
-              isDark ? 'border-red-600/40 bg-red-950/20' : 'border-red-300 bg-red-50/50'
+              isDark ? 'border-red-600/40 bg-red-950/20' : 'border-stone-300 bg-white shadow-sm'
             }`}>
-              <span className="px-3 py-1 rounded-full text-xs font-mono bg-red-600/20 text-red-500 border border-red-500/30">
+              <span className={`px-3 py-1 rounded-full text-xs font-mono border ${
+                isDark ? 'bg-red-600/20 text-red-500 border-red-500/30' : 'bg-stone-100 text-slate-900 border-stone-300'
+              }`}>
                 Engineered NEXUS Architecture
               </span>
               <ul className={`space-y-3 text-sm ${isDark ? 'text-neutral-200' : 'text-stone-800'}`}>
                 <li className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+                  <CheckCircle2 className={`w-4 h-4 shrink-0 mt-0.5 ${isDark ? 'text-red-500' : 'text-slate-900'}`} />
                   <span>Sustained 5.4x ROAS with automated real-time CAPI ad bidding</span>
                 </li>
                 <li className="flex items-start gap-2.5">

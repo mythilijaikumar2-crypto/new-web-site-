@@ -56,9 +56,13 @@ export const Navbar: React.FC = () => {
             <span className={`font-heading font-extrabold text-xl tracking-wider flex items-center gap-1.5 transition-colors duration-300 ${
               isDark ? 'text-white' : 'text-neutral-900'
             }`}>
-              NEXUS <span className="text-red-500 text-xs font-mono font-normal tracking-normal uppercase bg-red-950/40 border border-red-800/50 px-1.5 py-0.5 rounded">HQ</span>
+              NEXUS <span className={`text-xs font-mono font-normal tracking-normal uppercase px-1.5 py-0.5 rounded ${
+                isDark ? 'text-red-500 bg-red-950/40 border border-red-800/50' : 'text-slate-900 bg-stone-100 border border-stone-300'
+              }`}>HQ</span>
             </span>
-            <span className="text-[10px] text-red-500/80 tracking-widest uppercase font-mono -mt-1">Digital Agency</span>
+            <span className={`text-[10px] tracking-widest uppercase font-mono -mt-1 ${
+              isDark ? 'text-red-500/80' : 'text-stone-500'
+            }`}>Digital Agency</span>
           </div>
         </NavLink>
 
@@ -82,7 +86,9 @@ export const Navbar: React.FC = () => {
                 {isActive && (
                   <motion.div
                     layoutId="activeNavTab"
-                    className="absolute inset-0 bg-gradient-to-r from-red-600/30 to-red-900/20 border border-red-500/40 rounded-full -z-10"
+                    className={`absolute inset-0 rounded-full -z-10 ${
+                      isDark ? 'bg-gradient-to-r from-red-600/30 to-red-900/20 border border-red-500/40' : 'bg-stone-100 border border-stone-300'
+                    }`}
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}

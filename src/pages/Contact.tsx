@@ -105,10 +105,10 @@ export const Contact: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-card border text-xs font-mono ${
-            isDark ? 'border-red-900/40 text-red-400' : 'border-red-200 text-red-600 shadow-xs'
+            isDark ? 'border-red-900/40 text-red-400' : 'border-stone-300 bg-stone-100 text-stone-800'
           }`}
         >
-          <Flame className="w-3.5 h-3.5 text-red-500" />
+          <Flame className={`w-3.5 h-3.5 ${isDark ? 'text-red-500' : 'text-slate-800'}`} />
           <span>Strategic Inquiry</span>
         </motion.div>
 
@@ -118,7 +118,7 @@ export const Contact: React.FC = () => {
           transition={{ delay: 0.1 }}
           className="text-4xl sm:text-6xl font-heading font-extrabold tracking-tight leading-tight"
         >
-          Let's Engineer Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-rose-500 to-red-800">Growth Strategy</span>
+          Let's Engineer Your <span className={isDark ? "text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-rose-500 to-red-800" : "text-slate-950 font-extrabold"}>Growth Strategy</span>
         </motion.h1>
 
         <p className={`text-base sm:text-lg leading-relaxed ${isDark ? 'text-neutral-400' : 'text-stone-600'}`}>
@@ -143,31 +143,37 @@ export const Contact: React.FC = () => {
               
               <div className="space-y-4 text-sm">
                 <div className="flex items-center gap-3">
-                  <div className="p-3 rounded-2xl bg-red-600/20 text-red-500 border border-red-500/30">
+                  <div className={`p-3 rounded-2xl border ${
+                    isDark ? 'bg-red-600/20 text-red-500 border-red-500/30' : 'bg-stone-100 text-slate-800 border-stone-200'
+                  }`}>
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-xs font-mono text-red-500">Inquiries & Proposals</span>
+                    <span className={`text-xs font-mono ${isDark ? 'text-red-500' : 'text-stone-600'}`}>Inquiries & Proposals</span>
                     <p className={`font-semibold ${isDark ? 'text-white' : 'text-neutral-900'}`}>growth@nexusagency.com</p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="p-3 rounded-2xl bg-red-600/20 text-red-500 border border-red-500/30">
+                  <div className={`p-3 rounded-2xl border ${
+                    isDark ? 'bg-red-600/20 text-red-500 border-red-500/30' : 'bg-stone-100 text-slate-800 border-stone-200'
+                  }`}>
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-xs font-mono text-red-500">Direct Toll-Free Line</span>
+                    <span className={`text-xs font-mono ${isDark ? 'text-red-500' : 'text-stone-600'}`}>Direct Toll-Free Line</span>
                     <p className={`font-semibold ${isDark ? 'text-white' : 'text-neutral-900'}`}>+1 (800) 459-NEXUS</p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="p-3 rounded-2xl bg-red-600/20 text-red-500 border border-red-500/30">
+                  <div className={`p-3 rounded-2xl border ${
+                    isDark ? 'bg-red-600/20 text-red-500 border-red-500/30' : 'bg-stone-100 text-slate-800 border-stone-200'
+                  }`}>
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-xs font-mono text-red-500">Guaranteed Response Time</span>
+                    <span className={`text-xs font-mono ${isDark ? 'text-red-500' : 'text-stone-600'}`}>Guaranteed Response Time</span>
                     <p className={`font-semibold ${isDark ? 'text-white' : 'text-neutral-900'}`}>Under 12 Hours</p>
                   </div>
                 </div>
@@ -187,7 +193,9 @@ export const Contact: React.FC = () => {
                   <h5 className={`font-bold text-sm ${isDark ? 'text-white' : 'text-neutral-900'}`}>San Francisco (HQ)</h5>
                   <p className={`text-xs ${isDark ? 'text-neutral-400' : 'text-stone-500'}`}>500 Howard St, Suite 400, CA 94105</p>
                 </div>
-                <span className="text-xs font-mono px-2.5 py-1 bg-red-600/20 text-red-500 border border-red-500/30 rounded-full font-bold">PST</span>
+                <span className={`text-xs font-mono px-2.5 py-1 border rounded-full font-bold ${
+                  isDark ? 'bg-red-600/20 text-red-500 border-red-500/30' : 'bg-stone-100 text-slate-900 border-stone-300'
+                }`}>PST</span>
               </div>
 
               <div className={`glass-card rounded-2xl p-4 border flex items-center justify-between ${
@@ -197,7 +205,9 @@ export const Contact: React.FC = () => {
                   <h5 className={`font-bold text-sm ${isDark ? 'text-white' : 'text-neutral-900'}`}>London Innovation Hub</h5>
                   <p className={`text-xs ${isDark ? 'text-neutral-400' : 'text-stone-500'}`}>100 Bishopsgate, London EC2N 4AG</p>
                 </div>
-                <span className="text-xs font-mono px-2.5 py-1 bg-red-600/20 text-red-500 border border-red-500/30 rounded-full font-bold">GMT</span>
+                <span className={`text-xs font-mono px-2.5 py-1 border rounded-full font-bold ${
+                  isDark ? 'bg-red-600/20 text-red-500 border-red-500/30' : 'bg-stone-100 text-slate-900 border-stone-300'
+                }`}>GMT</span>
               </div>
             </div>
 
@@ -211,7 +221,7 @@ export const Contact: React.FC = () => {
                 className="absolute inset-0 w-full h-full object-cover opacity-25"
               />
               <div className="relative z-10 text-center space-y-1">
-                <MapPin className="w-8 h-8 text-red-500 mx-auto animate-bounce" />
+                <MapPin className={`w-8 h-8 mx-auto animate-bounce ${isDark ? 'text-red-500' : 'text-slate-900'}`} />
                 <span className={`text-xs font-mono font-bold px-3 py-1 rounded-full border ${
                   isDark ? 'bg-black/90 text-white border-red-900/40' : 'bg-white/90 text-neutral-900 border-stone-200 shadow-xs'
                 }`}>
@@ -233,7 +243,9 @@ export const Contact: React.FC = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-12 space-y-6"
                 >
-                  <div className="w-20 h-20 rounded-full bg-red-600/20 border border-red-500/40 flex items-center justify-center text-red-500 mx-auto">
+                  <div className={`w-20 h-20 rounded-full border flex items-center justify-center mx-auto ${
+                    isDark ? 'bg-red-600/20 border-red-500/40 text-red-500' : 'bg-stone-100 border-stone-300 text-slate-900'
+                  }`}>
                     <CheckCircle2 className="w-10 h-10" />
                   </div>
                   <h3 className={`text-3xl font-heading font-bold ${isDark ? 'text-white' : 'text-neutral-900'}`}>
@@ -284,10 +296,10 @@ export const Contact: React.FC = () => {
                         placeholder="Alex Vance"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className={`w-full border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-red-500 ${
+                        className={`w-full border rounded-xl px-4 py-3 text-sm focus:outline-none ${
                           isDark
-                            ? 'bg-black border-neutral-900 text-white placeholder-neutral-600'
-                            : 'bg-stone-50 border-stone-300 text-neutral-900 placeholder-stone-400'
+                            ? 'bg-black border-neutral-900 text-white placeholder-neutral-600 focus:border-red-500'
+                            : 'bg-stone-50 border-stone-300 text-neutral-900 placeholder-stone-400 focus:border-slate-900'
                         } ${errors.name ? 'border-red-600' : ''}`}
                       />
                       {errors.name && <span className="text-[11px] text-red-500 font-mono">{errors.name}</span>}
@@ -302,10 +314,10 @@ export const Contact: React.FC = () => {
                         placeholder="alex@company.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className={`w-full border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-red-500 ${
+                        className={`w-full border rounded-xl px-4 py-3 text-sm focus:outline-none ${
                           isDark
-                            ? 'bg-black border-neutral-900 text-white placeholder-neutral-600'
-                            : 'bg-stone-50 border-stone-300 text-neutral-900 placeholder-stone-400'
+                            ? 'bg-black border-neutral-900 text-white placeholder-neutral-600 focus:border-red-500'
+                            : 'bg-stone-50 border-stone-300 text-neutral-900 placeholder-stone-400 focus:border-slate-900'
                         } ${errors.email ? 'border-red-600' : ''}`}
                       />
                       {errors.email && <span className="text-[11px] text-red-500 font-mono">{errors.email}</span>}
@@ -323,10 +335,10 @@ export const Contact: React.FC = () => {
                         placeholder="Aurora Capital"
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        className={`w-full border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-red-500 ${
+                        className={`w-full border rounded-xl px-4 py-3 text-sm focus:outline-none ${
                           isDark
-                            ? 'bg-black border-neutral-900 text-white placeholder-neutral-600'
-                            : 'bg-stone-50 border-stone-300 text-neutral-900 placeholder-stone-400'
+                            ? 'bg-black border-neutral-900 text-white placeholder-neutral-600 focus:border-red-500'
+                            : 'bg-stone-50 border-stone-300 text-neutral-900 placeholder-stone-400 focus:border-slate-900'
                         } ${errors.company ? 'border-red-600' : ''}`}
                       />
                       {errors.company && <span className="text-[11px] text-red-500 font-mono">{errors.company}</span>}
@@ -341,10 +353,10 @@ export const Contact: React.FC = () => {
                         placeholder="https://company.com"
                         value={formData.website}
                         onChange={(e) => setFormData({ ...formData, website: e.target.value })}
-                        className={`w-full border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-red-500 ${
+                        className={`w-full border rounded-xl px-4 py-3 text-sm focus:outline-none ${
                           isDark
-                            ? 'bg-black border-neutral-900 text-white placeholder-neutral-600'
-                            : 'bg-stone-50 border-stone-300 text-neutral-900 placeholder-stone-400'
+                            ? 'bg-black border-neutral-900 text-white placeholder-neutral-600 focus:border-red-500'
+                            : 'bg-stone-50 border-stone-300 text-neutral-900 placeholder-stone-400 focus:border-slate-900'
                         }`}
                       />
                     </div>
@@ -365,7 +377,7 @@ export const Contact: React.FC = () => {
                             onClick={() => handleServiceToggle(srv)}
                             className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer ${
                               isSelected
-                                ? 'bg-red-600 text-white border border-red-500'
+                                ? isDark ? 'bg-red-600 text-white border border-red-500' : 'bg-slate-950 text-white border border-slate-950'
                                 : isDark
                                   ? 'bg-neutral-950 border border-neutral-800 text-neutral-400 hover:text-white'
                                   : 'bg-stone-100 border border-stone-200 text-stone-600 hover:text-black'
@@ -391,7 +403,7 @@ export const Contact: React.FC = () => {
                           onClick={() => setFormData({ ...formData, budget: b })}
                           className={`py-2 rounded-xl text-xs font-mono transition-all cursor-pointer ${
                             formData.budget === b
-                              ? 'bg-red-600/20 text-red-500 border border-red-500 font-bold'
+                              ? isDark ? 'bg-red-600/20 text-red-500 border border-red-500 font-bold' : 'bg-slate-950 text-white border border-slate-950 font-bold'
                               : isDark
                                 ? 'bg-neutral-950 border border-neutral-800 text-neutral-400 hover:text-white'
                                 : 'bg-stone-100 border border-stone-200 text-stone-600 hover:text-black'
@@ -413,10 +425,10 @@ export const Contact: React.FC = () => {
                       placeholder="Tell us about your current CPA, targets, or timelines..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className={`w-full border rounded-xl p-4 text-sm focus:outline-none focus:border-red-500 ${
+                      className={`w-full border rounded-xl p-4 text-sm focus:outline-none ${
                         isDark
-                          ? 'bg-black border-neutral-900 text-white placeholder-neutral-600'
-                          : 'bg-stone-50 border-stone-300 text-neutral-900 placeholder-stone-400'
+                          ? 'bg-black border-neutral-900 text-white placeholder-neutral-600 focus:border-red-500'
+                          : 'bg-stone-50 border-stone-300 text-neutral-900 placeholder-stone-400 focus:border-slate-900'
                       } ${errors.message ? 'border-red-600' : ''}`}
                     />
                     {errors.message && <span className="text-[11px] text-red-500 font-mono">{errors.message}</span>}
@@ -443,7 +455,7 @@ export const Contact: React.FC = () => {
                   <div className={`flex items-center justify-center gap-2 text-[11px] font-mono text-center ${
                     isDark ? 'text-neutral-500' : 'text-stone-500'
                   }`}>
-                    <ShieldCheck className="w-3.5 h-3.5 text-red-500" />
+                    <ShieldCheck className={`w-3.5 h-3.5 ${isDark ? 'text-red-500' : 'text-slate-800'}`} />
                     <span>100% NDA Protection & Zero Spam Guarantee</span>
                   </div>
                 </form>
