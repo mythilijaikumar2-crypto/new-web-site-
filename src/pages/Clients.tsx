@@ -20,7 +20,7 @@ export const Clients: React.FC = () => {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 
-  const tags = ['All', 'Paid Media & SEO', 'Branding & Web Dev', 'Meta Ads & E-Commerce', 'Local SEO'];
+  const tags = ['All', 'Paid Media & SEO', 'Branding & Web Dev', 'UI/UX & Social Marketing'];
 
   const filteredCaseStudies = selectedTag === 'All'
     ? CASE_STUDIES
