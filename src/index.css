@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #000000;
+    --bg-secondary: #0B0B0B;
+    --surface: #111111;
+    --brand-primary: #DE0918;
+    --brand-secondary: #690A0F;
+    --brand-accent: #FF3B4A;
+    --text-primary: #F8F8F8;
+    --text-secondary: #D3D3D3;
+    --text-muted: #A1A1AA;
+    --border-color: rgba(222, 9, 24, 0.25);
+    --glow-color: rgba(222, 9, 24, 0.45);
+    --card-bg: rgba(17, 17, 17, 0.75);
+    --nav-bg: rgba(0, 0, 0, 0.85);
+    --card-border: rgba(222, 9, 24, 0.25);
+    --shadow-color: rgba(222, 9, 24, 0.25);
+  }
+
+  html.light {
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F8F8F8;
+    --surface: #FFFFFF;
+    --brand-primary: #DE0918;
+    --brand-secondary: #690A0F;
+    --brand-accent: #FF3B4A;
+    --text-primary: #111111;
+    --text-secondary: #444444;
+    --text-muted: #6B7280;
+    --border-color: #E5E7EB;
+    --glow-color: rgba(222, 9, 24, 0.15);
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --nav-bg: rgba(255, 255, 255, 0.85);
+    --card-border: #E5E7EB;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .font-number {
+    font-family: 'Sora', sans-serif;
+  }
+
+  .font-heading {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+/* Custom Utilities for Premium Agency Aesthetic */
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 8px 32px 0 var(--shadow-color);
+  transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glass-card-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  border-color: var(--brand-primary);
+  box-shadow: 0 12px 40px 0 var(--glow-color);
+  transform: translateY(-4px);
+}
+
+.glass-nav {
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+/* Gradients */
+.text-gradient {
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-muted) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-red {
+  background: linear-gradient(135deg, #FF3B4A 0%, #DE0918 50%, #690A0F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-red {
+  background: linear-gradient(135deg, #DE0918 0%, #690A0F 100%);
+}
+
+.bg-gradient-mesh {
+  background-image: 
+    radial-gradient(at 10% 20%, rgba(222, 9, 24, 0.2) 0px, transparent 50%),
+    radial-gradient(at 90% 80%, rgba(255, 59, 74, 0.15) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(105, 10, 15, 0.2) 0px, transparent 50%);
+}
+
+.bg-hero-glow {
+  background: radial-gradient(circle at 50% 30%, rgba(222, 9, 24, 0.3) 0%, rgba(105, 10, 15, 0.15) 45%, transparent 70%);
+}
+
+
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-primary);
+}
