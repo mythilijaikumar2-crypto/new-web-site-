@@ -120,7 +120,7 @@ export const Footer: React.FC = () => {
               </a>
 
               <a
-                href="https://facebook.com/"
+                href="https://www.facebook.com/profile.php?id=61591971660618"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"

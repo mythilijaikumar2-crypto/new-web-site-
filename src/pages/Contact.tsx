@@ -232,7 +232,7 @@ export const Contact: React.FC = () => {
                   </a>
 
                   <a
-                    href="https://facebook.com/"
+                    href="https://www.facebook.com/profile.php?id=61591971660618"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2.5 p-3 rounded-xl border transition-all hover:scale-[1.02] bg-[#1877F2]/10 border-[#1877F2]/30 text-[#1877F2] hover:bg-[#1877F2] hover:text-white font-semibold"
