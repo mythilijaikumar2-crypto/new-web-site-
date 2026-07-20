@@ -40,30 +40,37 @@ export const Navbar: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
         isScrolled
-          ? 'glass-nav py-3.5 shadow-2xl shadow-red-950/20'
-          : 'bg-transparent py-6'
+          ? 'glass-nav py-2.5 shadow-2xl shadow-red-950/20'
+          : 'bg-transparent py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Brand Logo */}
-        <NavLink to="/" className="flex items-center gap-2 group relative z-50">
+
+        {/* ── LEFT: Brand Logo ── */}
+        <NavLink to="/" className="flex items-center gap-0 group relative z-50 shrink-0">
+          {/* Icon — transparent bg, no container */}
           <img
             src={logoImg}
             alt="KEVORCH Icon"
-            className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300"
+            className="w-11 h-11 object-contain mix-blend-normal"
+            style={{ background: 'transparent' }}
           />
+          {/* Wordmark logo — dark mode: white, light mode: dark */}
           <img
             src={logo8Img}
-            alt="KEVORCH Logo"
-            className={`h-8 object-contain transition-all duration-300 group-hover:opacity-80 ${
-              isDark ? 'brightness-100' : 'brightness-0'
+            alt="KEVORCH"
+            className={`h-7 object-contain transition-all duration-300 ${
+              isDark ? 'brightness-100 invert-0' : 'brightness-0'
             }`}
+            style={{ background: 'transparent' }}
           />
         </NavLink>
 
-        {/* Desktop Navigation */}
-        <nav className={`hidden md:flex items-center gap-1 border backdrop-blur-xl px-4 py-1.5 rounded-full shadow-inner transition-colors duration-300 ${
-          isDark ? 'bg-neutral-900/70 border-red-900/30' : 'bg-white/80 border-stone-200 shadow-stone-200/50'
+        {/* ── CENTER: Desktop Navigation (standalone pill) ── */}
+        <nav className={`hidden md:flex items-center gap-1 border backdrop-blur-xl px-3 py-1.5 rounded-full shadow-inner transition-colors duration-300 absolute left-1/2 -translate-x-1/2 ${
+          isDark
+            ? 'bg-neutral-900/70 border-red-900/30'
+            : 'bg-white/90 border-stone-200 shadow-stone-200/50'
         }`}>
           {navLinks.map((link) => {
             const isActive = location.pathname === link.path;
@@ -71,7 +78,7 @@ export const Navbar: React.FC = () => {
               <NavLink
                 key={link.path}
                 to={link.path}
-                className={`relative px-4 py-2 text-sm font-heading font-medium transition-colors duration-300 rounded-full ${
+                className={`relative px-4 py-1.5 text-sm font-heading font-medium transition-colors duration-300 rounded-full whitespace-nowrap ${
                   isActive
                     ? isDark ? 'text-white font-semibold' : 'text-neutral-950 font-bold'
                     : isDark ? 'text-neutral-400 hover:text-neutral-200' : 'text-stone-600 hover:text-stone-900'
@@ -82,7 +89,9 @@ export const Navbar: React.FC = () => {
                   <motion.div
                     layoutId="activeNavTab"
                     className={`absolute inset-0 rounded-full -z-10 ${
-                      isDark ? 'bg-linear-to-r from-red-600/30 to-red-900/20 border border-red-500/40' : 'bg-stone-100 border border-stone-300'
+                      isDark
+                        ? 'bg-linear-to-r from-red-600/30 to-red-900/20 border border-red-500/40'
+                        : 'bg-stone-100 border border-stone-300'
                     }`}
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
@@ -92,8 +101,8 @@ export const Navbar: React.FC = () => {
           })}
         </nav>
 
-        {/* CTA & Theme Toggle */}
-        <div className="hidden md:flex items-center gap-4">
+        {/* ── RIGHT: CTA & Theme Toggle ── */}
+        <div className="hidden md:flex items-center gap-3 shrink-0">
           <ThemeToggle />
           <MagneticButton
             variant="primary"
@@ -104,7 +113,7 @@ export const Navbar: React.FC = () => {
           </MagneticButton>
         </div>
 
-        {/* Mobile Controls */}
+        {/* ── Mobile Controls ── */}
         <div className="md:hidden flex items-center gap-3 relative z-50">
           <ThemeToggle />
           <button
@@ -121,7 +130,7 @@ export const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Drawer Overlay */}
+      {/* ── Mobile Drawer Overlay ── */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
