@@ -143,6 +143,28 @@ export const SERVICES_DATA: Service[] = [
     features: ['User Flow Diagrams', 'Wireframes & Mockups', 'Clickable Figma Prototypes', 'Design System Library'],
     metrics: { avgGrowth: '+85% Retention', timeline: '3-5 Weeks', roas: '4.1x ROI' },
   },
+  {
+    id: 'video-editing',
+    title: 'Video Editing & Reels',
+    category: 'Social & Branding',
+    shortDescription: 'Professional short-form video editing, Reels, motion graphics, and social ad post-production.',
+    fullDescription: 'Engaging short-form video editing, Reels, TikTok formats, motion graphics, and ad creative post-production.',
+    iconName: 'Video',
+    features: ['Short-Form Reel Production', 'Motion Graphics', 'Color Grading & Audio', 'Ad Creative Post-Production'],
+    metrics: { avgGrowth: '+320%', timeline: '1-2 Weeks', roas: '4.2x ROAS' },
+    featured: true,
+  },
+  {
+    id: 'graphic-design',
+    title: 'Graphic Design & Visuals',
+    category: 'Social & Branding',
+    shortDescription: 'Eye-catching visual designs, ad banners, social media posts, and marketing collateral.',
+    fullDescription: 'Custom ad banner design, social media graphics, promotional materials, and marketing collateral built to grab attention.',
+    iconName: 'Palette',
+    features: ['Ad Banner Design', 'Social Media Graphics', 'Marketing Collateral', 'Brand Visual Assets'],
+    metrics: { avgGrowth: '+250%', timeline: '1 Week', roas: '3.8x ROI' },
+    featured: true,
+  },
 ];
 
 export const CASE_STUDIES: CaseStudy[] = [
