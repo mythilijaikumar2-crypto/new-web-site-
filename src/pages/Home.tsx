@@ -22,6 +22,7 @@ import { ProjectModal } from '../components/ProjectModal';
 import { CLIENT_LOGOS, SERVICES_DATA, CASE_STUDIES, TESTIMONIALS } from '../data/mockData';
 import type { CaseStudy } from '../types';
 import { useTheme } from '../context/ThemeContext';
+import bgLightVideo from '../assets/bglight1.mp4';
 
 const HERO_GRAPH_DATA = [
   { month: 'Jan', revenue: 28000, roas: 3.4 },
@@ -74,9 +75,19 @@ export const Home: React.FC = () => {
       {/* 1. HERO SECTION */}
       {/* ========================================================================= */}
       <section className="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden">
-        {/* Soft Crimson Glow in Dark Mode Only */}
-        {isDark && (
+        {/* Background Video in Light Mode / Soft Crimson Glow in Dark Mode */}
+        {isDark ? (
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-100 bg-hero-glow blur-3xl pointer-events-none opacity-60" />
+        ) : (
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-50 z-0"
+          >
+            <source src={bgLightVideo} type="video/mp4" />
+          </video>
         )}
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
