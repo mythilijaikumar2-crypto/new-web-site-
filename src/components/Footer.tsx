@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Flame, ArrowUp, Send, Check, ShieldCheck, Mail } from 'lucide-react';
+import { ArrowUp, Send, Check, ShieldCheck, Mail } from 'lucide-react';
+import logoImg from '../assets/logo icon 3.png';
 import { useTheme } from '../context/ThemeContext';
 
 interface IconProps { className?: string }
@@ -67,13 +68,11 @@ export const Footer: React.FC = () => {
           {/* Column 1: Brand & Availability */}
           <div className="lg:col-span-2 flex flex-col gap-6">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-linear-to-tr from-red-600 to-rose-400 p-[1.5px]">
-                <div className={`w-full h-full rounded-[10.5px] flex items-center justify-center ${
-                  isDark ? 'bg-black' : 'bg-white'
-                }`}>
-                  <Flame className="w-4 h-4 text-red-500" />
-                </div>
-              </div>
+              <img
+                src={logoImg}
+                alt="KEVORCH Logo"
+                className="w-9 h-9 object-contain"
+              />
               <span className={`font-heading font-extrabold text-2xl tracking-wider ${
                 isDark ? 'text-white' : 'text-neutral-900'
               }`}>NEXUS</span>

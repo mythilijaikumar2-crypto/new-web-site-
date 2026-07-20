@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Flame, ArrowRight, PhoneCall } from 'lucide-react';
+import { Menu, X, ArrowRight, PhoneCall } from 'lucide-react';
+import logoImg from '../assets/logo icon 3.png';
 import { MagneticButton } from './MagneticButton';
 import { ThemeToggle } from './ThemeToggle';
 import { useTheme } from '../context/ThemeContext';
@@ -45,13 +46,11 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
         <NavLink to="/" className="flex items-center gap-3 group relative z-50">
-          <div className="w-10 h-10 rounded-xl bg-linear-to-tr from-[#DE0918] via-[#FF3B4A] to-[#690A0F] p-[1.5px] shadow-lg shadow-red-600/40 group-hover:shadow-red-600/70 transition-shadow duration-300">
-            <div className={`w-full h-full rounded-[10.5px] flex items-center justify-center transition-colors duration-300 ${
-              isDark ? 'bg-black' : 'bg-white'
-            }`}>
-              <Flame className="w-5 h-5 text-red-500 group-hover:rotate-12 transition-transform duration-300" />
-            </div>
-          </div>
+          <img
+            src={logoImg}
+            alt="KEVORCH Logo"
+            className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300"
+          />
           <div className="flex flex-col">
             <span className={`font-heading font-extrabold text-xl tracking-wider flex items-center gap-1.5 transition-colors duration-300 ${
               isDark ? 'text-white' : 'text-neutral-900'
