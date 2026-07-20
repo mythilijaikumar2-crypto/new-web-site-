@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ExternalLink, TrendingUp, DollarSign, Award, ArrowRight } from 'lucide-react';
 import type { CaseStudy } from '../types';
@@ -11,7 +10,7 @@ interface ProjectModalProps {
   onConsultationClick: () => void;
 }
 
-export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, onConsultationClick }) => {
+export const ProjectModal = ({ project, onClose, onConsultationClick }: ProjectModalProps) => {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 

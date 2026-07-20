@@ -7,11 +7,11 @@ interface TiltCardProps {
   glowColor?: string;
 }
 
-export const TiltCard: React.FC<TiltCardProps> = ({
+export const TiltCard = ({
   children,
   className = '',
   glowColor = 'rgba(222, 9, 24, 0.4)',
-}) => {
+}: TiltCardProps) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -21,7 +21,7 @@ export const TiltCard: React.FC<TiltCardProps> = ({
   const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['8deg', '-8deg']);
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-8deg', '8deg']);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>): void => {
     const rect = e.currentTarget.getBoundingClientRect();
     const width = rect.width;
     const height = rect.height;

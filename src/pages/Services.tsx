@@ -27,7 +27,7 @@ export const Services: React.FC = () => {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 
-  const getServiceIcon = (iconName: string) => {
+  const getServiceIcon = (iconName: string): React.ReactElement => {
     const iconClass = `w-8 h-8 mx-auto mb-4 stroke-[1.5] transition-colors ${
       isDark ? 'text-red-500' : 'text-slate-800 group-hover:text-red-500'
     }`;
