@@ -54,7 +54,7 @@ export const Clients: React.FC = () => {
           transition={{ delay: 0.1 }}
           className="text-4xl sm:text-6xl font-heading font-extrabold tracking-tight leading-tight"
         >
-          Real Business Impact, <span className={isDark ? "text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-rose-500 to-red-800" : "text-slate-950 font-extrabold"}>Audited Results</span>
+          Real Business Impact, <span className={isDark ? "text-transparent bg-clip-text bg-linear-to-r from-red-500 via-rose-500 to-red-800" : "text-slate-950 font-extrabold"}>Audited Results</span>
         </motion.h1>
 
         <p className={`text-base sm:text-lg leading-relaxed ${isDark ? 'text-neutral-400' : 'text-stone-600'}`}>
@@ -103,7 +103,7 @@ export const Clients: React.FC = () => {
               onClick={() => setSelectedTag(tag)}
               className={`px-5 py-2 rounded-full text-xs font-heading font-semibold transition-all cursor-pointer ${
                 selectedTag === tag
-                  ? isDark ? 'bg-gradient-to-r from-red-600 to-rose-800 text-white shadow-lg' : 'bg-slate-950 text-white shadow-sm'
+                  ? isDark ? 'bg-linear-to-r from-red-600 to-rose-800 text-white shadow-lg' : 'bg-slate-950 text-white shadow-sm'
                   : isDark ? 'bg-neutral-900 text-neutral-400 border border-neutral-800 hover:text-white' : 'bg-stone-100 text-stone-600 border border-stone-200 hover:text-black'
               }`}
             >

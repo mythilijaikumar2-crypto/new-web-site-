@@ -118,7 +118,7 @@ export const Contact: React.FC = () => {
           transition={{ delay: 0.1 }}
           className="text-4xl sm:text-6xl font-heading font-extrabold tracking-tight leading-tight"
         >
-          Let's Engineer Your <span className={isDark ? "text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-rose-500 to-red-800" : "text-slate-950 font-extrabold"}>Growth Strategy</span>
+          Let's Engineer Your <span className={isDark ? "text-transparent bg-clip-text bg-linear-to-r from-red-500 via-rose-500 to-red-800" : "text-slate-950 font-extrabold"}>Growth Strategy</span>
         </motion.h1>
 
         <p className={`text-base sm:text-lg leading-relaxed ${isDark ? 'text-neutral-400' : 'text-stone-600'}`}>
